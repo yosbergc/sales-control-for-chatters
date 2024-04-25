@@ -1,0 +1,51 @@
+.sale-single-container {
+    padding: 20px;
+    width: 100%;
+    border: 0.666667px solid #3d3d41;
+    border-radius: 8px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.sale-single-container img{
+    width: 40px;
+    height: 30px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.sale-single-container span {
+    font-weight: 700;
+}
+.quantity-sell {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.separador {
+    border-top: 0.666667px solid #3d3d41;
+    width: 100%;
+    margin: 10px 0px;
+}
+.date {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.close {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
+.sale-single-container:hover {
+    background-color: white;
+    color: black;
+}
