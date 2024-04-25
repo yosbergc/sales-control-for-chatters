@@ -1,0 +1,20 @@
+.filter-single {
+    color: white;
+    padding: 5px 10px;
+    background-color: rgb(64, 64, 64);
+    width: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+.filter-single:hover {
+    background-color: rgb(86, 14, 14);
+}
+.filter-single.active {
+    background-color: white;
+    color: black;
+}
+.filter-single.active:hover {
+    background-color: white;
+    color: black;
+}
