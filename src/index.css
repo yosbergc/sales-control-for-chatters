@@ -8,8 +8,9 @@ body {
   background-color: #09080a;
 }
 ::-webkit-scrollbar {
-  appearance: none;
+  appearance: none; 
   width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-thumb {
   background-color: rgb(107, 107, 107);

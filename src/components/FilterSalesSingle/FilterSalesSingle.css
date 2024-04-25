@@ -1,11 +1,13 @@
 .filter-single {
     color: white;
-    padding: 5px 10px;
+    padding: 5px 5px;
     background-color: rgb(64, 64, 64);
     width: max-content;
     border-radius: 5px;
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    white-space: nowrap;
+    font-size: 14px;
 }
 .filter-single:hover {
     background-color: rgb(86, 14, 14);
