@@ -76,8 +76,8 @@ plugins: {
     position: 'top',
     },
     title: {
-    display: true,
-    text: 'Chart.js Line Chart',
+    display: false,
+
     },
 },
 };
