@@ -1,5 +1,5 @@
 import { Chart, registerables } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import { Bar } from 'react-chartjs-2';
 Chart.register(...registerables)
 
 const ventas = [
@@ -52,6 +52,66 @@ const ventas = [
         "Amount": "60",
         "Date": "2021-01-10",
         "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
+    },
+    {
+        "Amount": "60",
+        "Date": "2021-01-10",
+        "Hour": "10:15"
     }
 ];
 
@@ -85,6 +145,6 @@ plugins: {
 
 
 function ChartComponent () {
-    return <Line data={data} options={options}/>;
+    return <Bar data={data} options={options}/>;
 }
 export { ChartComponent }

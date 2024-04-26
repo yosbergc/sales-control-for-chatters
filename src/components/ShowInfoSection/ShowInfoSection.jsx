@@ -7,10 +7,14 @@ function ShowInfoSection () {
                 <h3>Total generado hoy</h3>
                 <h5>317.82$</h5>
             </section>
-            <section>
-                <h3>Total faltante para la meta semanal</h3>
+            <section className='restanteMeta'>
+                <h3>Restante para la meta semanal</h3>
                 <h5>5783.18$</h5>
-                <span>(Aproximadamente 963$ por día)</span>
+
+            </section>
+            <section className='gananciaEstimada'>
+                <h3>Ganancias estimadas</h3>
+                <h5>25.42$</h5>
             </section>
         </section>
         <section className="down">
