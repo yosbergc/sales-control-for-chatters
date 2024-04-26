@@ -32,7 +32,6 @@
         grid-template-columns: 1fr 1fr;
         margin: 20px;
         align-items: stretch;
-
     }
     .estadisticas {
         max-width: 100%;

@@ -54,6 +54,7 @@
     .sale-single-container img {
         height: auto;
         width: 100px;
+        margin-left: 20px;
     }
     
 }
