@@ -2,7 +2,7 @@ import './App.css';
 import { SaleSingle } from './components/SaleSingle/SaleSingle'
 import { FilterSalesSingle } from './components/FilterSalesSingle/FilterSalesSingle';
 import { ChartComponent } from './components/ChartComponent/ChartComponent';
-
+import { OpenModal } from './components/OpenModal/OpenModal';
 function App() {
   return (<main>
     <section className='SaleList'>
@@ -21,7 +21,7 @@ function App() {
     <section className='estadisticas'>
       <ChartComponent/>
     </section>
-    
+    <OpenModal/>
   </main>)
 }
 
