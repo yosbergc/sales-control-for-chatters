@@ -50,3 +50,10 @@
 .sale-single-container:hover {
     background-color: rgb(194, 237, 255);
 }
+@media (min-width: 1200px) {
+    .sale-single-container img {
+        height: auto;
+        width: 100px;
+    }
+    
+}
