@@ -16,10 +16,6 @@
     background-color: var(--main-component-color);
     margin: 0 auto;
 }
-.secondPart {
-    max-height: 92vh;
-    overflow-y: hidden;
-}
 .salessinglecontainer {
     overflow: auto;
 }
@@ -38,7 +34,27 @@
     background-color: var(--main-component-color);
     padding: 20px;
 }
-
+#modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    top: 0px;
+    left: 0px;
+}
+.modalInner {
+    position: relative;
+    background-color: var(--main-hover-component-color);
+    border-radius: 10px;
+    padding: 20px;
+}
+.closeButton {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
 @media (min-width: 1200px) {
     main {
         display: grid;
