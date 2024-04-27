@@ -16,7 +16,7 @@
 }
 .sale-single-container img {
     width: auto;
-    height: 20px;
+    height: 60px;
     object-fit: cover;
     border-radius: 5px;
 }
@@ -53,7 +53,7 @@
 }
 @media (min-width: 1200px) {
     .sale-single-container img {
-        height: auto;
+        height: 60px;
         width: 100px;
         margin-left: 20px;
     }

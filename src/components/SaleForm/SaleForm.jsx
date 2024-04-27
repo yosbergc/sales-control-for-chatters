@@ -14,7 +14,7 @@ function SaleForm ({onSubmit}) {
         onSubmit({event, quantity, file})
     }}>
         <label htmlFor="quantity">Cantidad vendida</label>
-        <input type="number" name="quantity" placeholder="Monto vendido" id="quantity" ref={quantityRef} step={0.01}/>
+        <input type="number" name="quantity" placeholder="Monto vendido" id="quantity" ref={quantityRef} step={0.01} autoComplete='off' autoFocus/>
         <label htmlFor="screenshot" className={`uploadFile ${file && "fileadded"}`}>
             <span>
                 <MdOutlineUploadFile color='white' size={30} className='icon'/> {file ? "Archivo agregado" : "Archivo a subir"}

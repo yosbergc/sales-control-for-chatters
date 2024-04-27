@@ -7,7 +7,9 @@ import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
 import { Modal } from './components/Modal/Modal';
 import { SaleForm } from './components/SaleForm/SaleForm';
 import { NoSales } from './components/NoSales/NoSales';
+import moment from 'moment';
 import React from 'react';
+
 
 function App() {
   const [sales, setSales] = React.useState([])
@@ -23,7 +25,16 @@ function App() {
   function handleSales({event, quantity, file}) {
     event.preventDefault()
     if (quantity === '' || !file) return
-    console.log(file)
+    let newSales = [...sales]
+    let actualDate = moment();
+    newSales.push({
+      Amount: quantity,
+      Date: `${actualDate.format('DD-MM-YYYY')}`,
+      Hour: `${actualDate.hour()}:${actualDate.minute()}`,
+      File: file,
+      ID: actualDate.format('YYYYMMDDHHmm')
+    });
+    setSales(newSales);
     setIsModalActive(state => false)
   }
   return (<main>
@@ -35,7 +46,14 @@ function App() {
         <FilterSalesSingle name={"Último mes"} activeFilter={activeFilter} id={3} onClick={handleFilter}/>
       </section>
         <section className='salessinglecontainer'>
-          {sales.length > 0 ? sales.map(sale => <SaleSingle/>) : <NoSales/>}
+          {sales.length > 0 ? 
+          sales.map(sale => <SaleSingle 
+          Amount={sale.Amount}
+          Date={sale.Date}
+          Hour={sale.Hour}
+          File={sale.File}
+          key={sale.ID}
+          />) : <NoSales/>}
         </section>
     </section>
     <section className='secondPart'>
