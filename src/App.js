@@ -16,13 +16,16 @@ function App() {
   function handleModal() {
     setIsModalActive(!isModalActive);
   }
+  function handleFilter(id) {
+    setActiveFilter(id)
+  }
   return (<main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
-        <FilterSalesSingle name={"Hoy"} isActive/>
-        <FilterSalesSingle name={"Últimos 7 días"}/>
-        <FilterSalesSingle name={"Últimos 15 días"}/>
-        <FilterSalesSingle name={"Último mes"}/>
+        <FilterSalesSingle name={"Hoy"} activeFilter={activeFilter} id={0} onClick={handleFilter}/>
+        <FilterSalesSingle name={"Últimos 7 días"} activeFilter={activeFilter} id={1} onClick={handleFilter}/>
+        <FilterSalesSingle name={"Últimos 15 días"} activeFilter={activeFilter} id={2} onClick={handleFilter}/>
+        <FilterSalesSingle name={"Último mes"} activeFilter={activeFilter} id={3} onClick={handleFilter}/>
       </section>
         <section className='salessinglecontainer'>
           {sales.length > 0 ? sales.map(sale => <SaleSingle/>) : <NoSales/>}
