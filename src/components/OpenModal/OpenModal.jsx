@@ -1,8 +1,8 @@
-import { IoIosAddCircleOutline } from "react-icons/io"
 import './openmodal.css'
-function OpenModal () {
+import { IoIosAddCircle } from "react-icons/io"
+function OpenModal ({onClick}) {
     return (<section className="openmodal">
-        <IoIosAddCircleOutline size={"40px"}/>
+        <IoIosAddCircle size={"40px"} onClick={onClick}/>
     </section>)
 }
 export { OpenModal }

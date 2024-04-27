@@ -1,5 +1,6 @@
 import './ShowInfoSection.css'
-
+import { FaImages } from "react-icons/fa"
+import { BiSolidDollarCircle } from "react-icons/bi"
 function ShowInfoSection () {
     return (<section className='showInfoSection'>
         <section className="upper">
@@ -18,8 +19,8 @@ function ShowInfoSection () {
             </section>
         </section>
         <section className="down">
-            <button>Obtener capturas</button>
-            <button>Obtener total</button>
+            <button><FaImages size={25}/> Obtener capturas</button>
+            <button><BiSolidDollarCircle size={25}/>Obtener total</button>
         </section>
     </section>)
 }

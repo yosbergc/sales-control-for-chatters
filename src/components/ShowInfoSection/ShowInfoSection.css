@@ -23,8 +23,11 @@
     border: none;
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    font-size: .875rem;
+    font-size: 1rem;
     color: var(--main-text);
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 .gananciaEstimada h5, .totalGenerated h5 {
     color: rgb(135, 220, 9);

@@ -9,7 +9,12 @@ import { SaleForm } from './components/SaleForm/SaleForm';
 import React from 'react';
 
 function App() {
-// TODO Añadir los iconos a los titulos y mejorar el look, mejorar el boton del modal, hacerlo responsive, crear contexto con todo lo que vamos a usar, adaptar el chart.
+  const [sales, setSales] = React.useState([])
+  const [activeFilter, setActiveFilter] = React.useState(0)
+  const [isModalActive, setIsModalActive] = React.useState(false)
+  function handleModal() {
+    setIsModalActive(!isModalActive);
+  }
   return (<main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
@@ -32,10 +37,10 @@ function App() {
       </section>
       <ShowInfoSection/>
     </section>
-    <OpenModal/>
-    <Modal>
-      <SaleForm/>
-    </Modal>
+    <OpenModal onClick={handleModal}/>
+    {isModalActive && <Modal onClick={handleModal}>
+        <SaleForm/>
+      </Modal>}
   </main>)
 }
 
