@@ -3,6 +3,7 @@ import './SaleSingle.css'
 import { TbMoneybag } from "react-icons/tb";
 import { MdOutlineDateRange } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
+
 function SaleSingle () {
     return (<section className="sale-single-container">
         <IoIosCloseCircleOutline size={'25px'} className='close'/>

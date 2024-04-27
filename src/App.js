@@ -13,11 +13,18 @@ function App() {
   const [sales, setSales] = React.useState([])
   const [activeFilter, setActiveFilter] = React.useState(0)
   const [isModalActive, setIsModalActive] = React.useState(false)
+
   function handleModal() {
     setIsModalActive(!isModalActive);
   }
   function handleFilter(id) {
     setActiveFilter(id)
+  }
+  function handleSales({event, quantity, file}) {
+    event.preventDefault()
+    if (quantity === '' || !file) return
+    console.log(file)
+    setIsModalActive(state => false)
   }
   return (<main>
     <section className='SaleList'>
@@ -39,7 +46,7 @@ function App() {
     </section>
     <OpenModal onClick={handleModal}/>
     {isModalActive && <Modal onClick={handleModal}>
-        <SaleForm/>
+        <SaleForm onSubmit={handleSales}/>
       </Modal>}
   </main>)
 }
