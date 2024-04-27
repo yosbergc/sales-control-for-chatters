@@ -49,11 +49,16 @@
     background-color: var(--main-hover-component-color);
     border-radius: 10px;
     padding: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 .closeButton {
     position: absolute;
     right: 0px;
     top: 0px;
+}
+.closeButton {
+    cursor: pointer;
 }
 @media (min-width: 1200px) {
     main {

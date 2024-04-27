@@ -5,6 +5,7 @@ import { ChartComponent } from './components/ChartComponent/ChartComponent';
 import { OpenModal } from './components/OpenModal/OpenModal';
 import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
 import { Modal } from './components/Modal/Modal';
+import { SaleForm } from './components/SaleForm/SaleForm';
 import React from 'react';
 
 function App() {
@@ -32,7 +33,9 @@ function App() {
       <ShowInfoSection/>
     </section>
     <OpenModal/>
-    <Modal/>
+    <Modal>
+      <SaleForm/>
+    </Modal>
   </main>)
 }
 

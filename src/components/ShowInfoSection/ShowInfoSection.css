@@ -9,6 +9,7 @@
 .upper {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 }
 .down {
     display: flex;
@@ -27,4 +28,9 @@
 }
 .gananciaEstimada h5, .totalGenerated h5 {
     color: rgb(135, 220, 9);
+}
+@media (min-width: 1200px) {
+    .upper {
+        flex-wrap: nowrap;
+    }
 }
