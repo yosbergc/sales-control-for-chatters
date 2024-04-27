@@ -1,5 +1,5 @@
 import { Chart, registerables } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 Chart.register(...registerables)
 
 const ventas = [
@@ -38,81 +38,6 @@ const ventas = [
         "Date": "2021-01-07",
         "Hour": "12:00"
     },
-    {
-        "Amount": "80",
-        "Date": "2021-01-08",
-        "Hour": "09:45"
-    },
-    {
-        "Amount": "175",
-        "Date": "2021-01-09",
-        "Hour": "16:10"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    },
-    {
-        "Amount": "60",
-        "Date": "2021-01-10",
-        "Hour": "10:15"
-    }
 ];
 
 const labels = ventas.map(singleSale => singleSale.Date);
@@ -121,30 +46,29 @@ const data = {
     labels,
     datasets: [
         {
-        label: 'Ventas de hoy',
         data: ventas.map(singleSale => singleSale.Amount),
         borderColor: 'BLUE',
-        backgroundColor: 'BLUE',
+        backgroundColor: 'rgba(16, 25, 211, 0.20)',
+        fill: true,
         },
     ]
 };
 
 const options = {
-responsive: true,
-plugins: {
-    legend: {
-    position: 'top',
-    },
-    title: {
-    display: false,
-
-    },
-},
+    responsive: true,
+    plugins: {
+        legend: {
+            display: false
+        },
+        title: {
+            display: false
+        },
+    }
 };
 
 
 
 function ChartComponent () {
-    return <Bar data={data} options={options}/>;
+    return <Line data={data} options={options}/>;
 }
 export { ChartComponent }

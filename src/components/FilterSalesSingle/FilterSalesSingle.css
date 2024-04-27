@@ -1,5 +1,5 @@
 .filter-single {
-    color: black;
+    color: var(--main-color);
     padding: 5px 5px;
     background-color: rgb(221, 221, 221);
     width: max-content;

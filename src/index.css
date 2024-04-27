@@ -4,7 +4,9 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
-
+body {
+  background-color: var(--main-body-color);
+}
 ::-webkit-scrollbar {
   appearance: none; 
   width: 10px;
@@ -13,5 +15,4 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgb(107, 107, 107);
   border-radius: 10px;
-  
 }
