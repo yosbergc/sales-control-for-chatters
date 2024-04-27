@@ -15,13 +15,15 @@ function App() {
         <FilterSalesSingle name={"Últimos 15 días"}/>
         <FilterSalesSingle name={"Último mes"}/>
       </section>
-      <SaleSingle />
-      <SaleSingle />
-      <SaleSingle />
-      <SaleSingle />
-      <SaleSingle />
+        <section className='salessinglecontainer'>
+          <SaleSingle />
+          <SaleSingle />
+          <SaleSingle />
+          <SaleSingle />
+          <SaleSingle />
+        </section>
     </section>
-    <section>
+    <section className='secondPart'>
       <section className='estadisticas'>
         <ChartComponent/>
       </section>

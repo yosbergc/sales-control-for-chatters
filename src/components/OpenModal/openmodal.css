@@ -4,6 +4,7 @@
     right: 20px;
     cursor: pointer;
     transition: 0.3s ease-in;
+    color: white;
 }
 .openmodal:hover {
     transform: scale(1.2);
