@@ -6,6 +6,7 @@ import { OpenModal } from './components/OpenModal/OpenModal';
 import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
 import { Modal } from './components/Modal/Modal';
 import { SaleForm } from './components/SaleForm/SaleForm';
+import { NoSales } from './components/NoSales/NoSales';
 import React from 'react';
 
 function App() {
@@ -24,11 +25,7 @@ function App() {
         <FilterSalesSingle name={"Último mes"}/>
       </section>
         <section className='salessinglecontainer'>
-          <SaleSingle />
-          <SaleSingle />
-          <SaleSingle />
-          <SaleSingle />
-          <SaleSingle />
+          {sales.length > 0 ? sales.map(sale => <SaleSingle/>) : <NoSales/>}
         </section>
     </section>
     <section className='secondPart'>
