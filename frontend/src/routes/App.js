@@ -1,12 +1,12 @@
 import './App.css';
-import { SaleSingle } from './components/SaleSingle/SaleSingle'
-import { FilterSalesSingle } from './components/FilterSalesSingle/FilterSalesSingle';
-import { ChartComponent } from './components/ChartComponent/ChartComponent';
-import { OpenModal } from './components/OpenModal/OpenModal';
-import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
-import { Modal } from './components/Modal/Modal';
-import { SaleForm } from './components/SaleForm/SaleForm';
-import { NoSales } from './components/NoSales/NoSales';
+import { SaleSingle } from '../components/SaleSingle/SaleSingle'
+import { FilterSalesSingle } from '../components/FilterSalesSingle/FilterSalesSingle';
+import { ChartComponent } from '../components/ChartComponent/ChartComponent';
+import { OpenModal } from '../components/OpenModal/OpenModal';
+import { ShowInfoSection } from '../components/ShowInfoSection/ShowInfoSection';
+import { Modal } from '../components/Modal/Modal';
+import { SaleForm } from '../components/SaleForm/SaleForm';
+import { NoSales } from '../components/NoSales/NoSales';
 import moment from 'moment';
 import React from 'react';
 
