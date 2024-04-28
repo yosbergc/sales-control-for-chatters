@@ -8,8 +8,8 @@ app.use(express.json());
 // Agregamos el path de la variable ENV.
 dotenv.config({path: "./env/.env"})
 // Seteamos el directorio público
-app.use('/resources', express.static('public'))
-app.use('/resources', express.static(__dirname + '/public'))
+app.use('/resources', express.static('./client/src/routes'))
+app.use('/resources', express.static(__dirname + '/client/src/routes'))
 
 console.log(__dirname + '/public')
 app.listen(3000, (request, response) => {
