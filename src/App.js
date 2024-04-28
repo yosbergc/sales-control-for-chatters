@@ -15,18 +15,17 @@ function App() {
   const [sales, setSales] = React.useState([])
   const [activeFilter, setActiveFilter] = React.useState(0)
   const [isModalActive, setIsModalActive] = React.useState(false)
+  const [metaSemanal, setMetaSemanal] = React.useState(0)
 
+  React.useEffect(() => {
+    let stringStorage = localStorage.getItem('userInformation');
+    
+  }, [])
   function handleModal() {
     setIsModalActive(!isModalActive);
   }
   function handleFilter(id) {
     setActiveFilter(id)
-  }
-  function deleteSale(id) {
-    const newSale = [...sales]
-    const elementToDelete = newSale.findIndex(element => element.ID === id);
-    newSale.splice(elementToDelete, 1);
-    setSales(newSale)
   }
   function handleSales({event, quantity, file}) {
     event.preventDefault()
@@ -59,8 +58,6 @@ function App() {
           Hour={sale.Hour}
           File={sale.File}
           key={sale.ID}
-          ID={sale.ID}
-          onDelete={deleteSale}
           />) : <NoSales/>}
         </section>
     </section>
