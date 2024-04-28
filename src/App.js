@@ -7,6 +7,8 @@ import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
 import { Modal } from './components/Modal/Modal';
 import { SaleForm } from './components/SaleForm/SaleForm';
 import { NoSales } from './components/NoSales/NoSales';
+import { useIntroduction } from './hooks/useIntroduction';
+import { UserNewForm } from './components/UserNewForm/UserNewForm';
 import moment from 'moment';
 import React from 'react';
 
@@ -16,16 +18,27 @@ function App() {
   const [activeFilter, setActiveFilter] = React.useState(0)
   const [isModalActive, setIsModalActive] = React.useState(false)
   const [metaSemanal, setMetaSemanal] = React.useState(0)
-
+  const {userNew, addNewUser} = useIntroduction();
+  const totalGenerado = React.useMemo(() => {
+    return sales.map(sale => Number(sale.Amount)).reduce((acum, val) => acum + val, 0);
+  }, [sales]);
   React.useEffect(() => {
     let stringStorage = localStorage.getItem('userInformation');
-    
-  }, [])
+      if (!stringStorage) return
+      let data = JSON.parse(stringStorage);
+      setMetaSemanal(data.meta)
+  }, [userNew])
   function handleModal() {
     setIsModalActive(!isModalActive);
   }
   function handleFilter(id) {
     setActiveFilter(id)
+  }
+  function handleDelete(id) {
+    const newSales = [...sales];
+    const element = newSales.findIndex(element => element.ID === id)
+    newSales.splice(element, 1);
+    setSales(newSales)
   }
   function handleSales({event, quantity, file}) {
     event.preventDefault()
@@ -58,6 +71,8 @@ function App() {
           Hour={sale.Hour}
           File={sale.File}
           key={sale.ID}
+          ID={sale.ID}
+          onDelete={handleDelete}
           />) : <NoSales/>}
         </section>
     </section>
@@ -65,11 +80,14 @@ function App() {
       <section className='estadisticas'>
         <ChartComponent/>
       </section>
-      <ShowInfoSection/>
+      <ShowInfoSection meta={metaSemanal} totalGenerado={totalGenerado}/>
     </section>
     <OpenModal onClick={handleModal}/>
     {isModalActive && <Modal onClick={handleModal}>
         <SaleForm onSubmit={handleSales}/>
+      </Modal>}
+    {userNew === true && <Modal>
+        <UserNewForm onSubmit={addNewUser}/>
       </Modal>}
   </main>)
 }
