@@ -20,7 +20,7 @@ function App() {
   const [metaSemanal, setMetaSemanal] = React.useState(0)
   const {userNew, addNewUser} = useIntroduction();
   const totalGenerado = React.useMemo(() => {
-    return sales.map(sale => Number(sale.Amount)).reduce((acum, val) => acum + val, 0);
+    return sales.map(sale => Number(sale.Amount)).reduce((acum, val) => acum + val, 0).toFixed(2);
   }, [sales]);
   React.useEffect(() => {
     let stringStorage = localStorage.getItem('userInformation');
