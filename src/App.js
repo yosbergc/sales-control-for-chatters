@@ -1,12 +1,12 @@
 import './App.css';
-import { SaleSingle } from '../components/SaleSingle/SaleSingle'
-import { FilterSalesSingle } from '../components/FilterSalesSingle/FilterSalesSingle';
-import { ChartComponent } from '../components/ChartComponent/ChartComponent';
-import { OpenModal } from '../components/OpenModal/OpenModal';
-import { ShowInfoSection } from '../components/ShowInfoSection/ShowInfoSection';
-import { Modal } from '../components/Modal/Modal';
-import { SaleForm } from '../components/SaleForm/SaleForm';
-import { NoSales } from '../components/NoSales/NoSales';
+import { SaleSingle } from './components/SaleSingle/SaleSingle'
+import { FilterSalesSingle } from './components/FilterSalesSingle/FilterSalesSingle';
+import { ChartComponent } from './components/ChartComponent/ChartComponent';
+import { OpenModal } from './components/OpenModal/OpenModal';
+import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
+import { Modal } from './components/Modal/Modal';
+import { SaleForm } from './components/SaleForm/SaleForm';
+import { NoSales } from './components/NoSales/NoSales';
 import moment from 'moment';
 import React from 'react';
 
@@ -21,6 +21,12 @@ function App() {
   }
   function handleFilter(id) {
     setActiveFilter(id)
+  }
+  function deleteSale(id) {
+    const newSale = [...sales]
+    const elementToDelete = newSale.findIndex(element => element.ID === id);
+    newSale.splice(elementToDelete, 1);
+    setSales(newSale)
   }
   function handleSales({event, quantity, file}) {
     event.preventDefault()
@@ -53,6 +59,8 @@ function App() {
           Hour={sale.Hour}
           File={sale.File}
           key={sale.ID}
+          ID={sale.ID}
+          onDelete={deleteSale}
           />) : <NoSales/>}
         </section>
     </section>
