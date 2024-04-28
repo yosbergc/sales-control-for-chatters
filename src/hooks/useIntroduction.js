@@ -1,30 +1,34 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import {useEffect, useState} from 'react'
+import { useLocalStorage } from './useLocalStorage';
 function useIntroduction ({setMetaSemanal}) {
-    const DB = localStorage.getItem('userLogged')
+    const {get, parse, set} = useLocalStorage();
     const [userNew, setUserNew] = useState();
+    const DB = get('userLogged')
     useEffect(() => {
         if (!DB) {
             setUserNew(true);
         } else {
-            let userInformation = JSON.parse(localStorage.getItem('userInformation'));
+            const userInformation = parse('userInformation');
             setUserNew(userInformation)
         }
     }, [])
     
     function addNewUser(nombre, genero, meta) {
+        console.log(nombre, genero, meta)
         let newUser = {
             nombre,
             genero,
             meta
         }
-        localStorage.setItem('userInformation', JSON.stringify(newUser))
+        set('userInformation', newUser)
         setUserNew(newUser)
-        localStorage.setItem('userLogged', JSON.stringify(true));
+        set('userLogged', true)
     }
     useEffect(() => {
-        let stringStorage = localStorage.getItem('userInformation');
+        let stringStorage = get('userInformation');
           if (!stringStorage) return
-          let data = JSON.parse(stringStorage);
+          let data = parse('userInformation');
           setMetaSemanal(data.meta)
       }, [userNew])
     
