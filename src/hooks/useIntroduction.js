@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-function useIntroduction () {
+function useIntroduction ({setMetaSemanal}) {
     const DB = localStorage.getItem('userLogged')
     const [userNew, setUserNew] = useState();
     useEffect(() => {
@@ -21,6 +21,13 @@ function useIntroduction () {
         setUserNew(newUser)
         localStorage.setItem('userLogged', JSON.stringify(true));
     }
+    useEffect(() => {
+        let stringStorage = localStorage.getItem('userInformation');
+          if (!stringStorage) return
+          let data = JSON.parse(stringStorage);
+          setMetaSemanal(data.meta)
+      }, [userNew])
+    
     return {userNew, addNewUser}
 }
 export { useIntroduction }

@@ -3,6 +3,7 @@
     place-content: center;
     text-align: center;
     color: var(--main-text);
+    
 }
 .NoSales svg {
     justify-self: center;
