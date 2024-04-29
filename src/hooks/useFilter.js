@@ -11,7 +11,9 @@ function useFilter ({sales}) {
 
     useEffect(() => {
         let filtered = sales;
-        if (filtered.length === 0) return
+        if (filtered.length === 0) {
+            setFilteredSales([])
+        }
         if (filters.today) {
           filtered = sales.filter((sale) =>
             moment(sale.SecretDate).isSame(moment(), "day")
@@ -31,7 +33,7 @@ function useFilter ({sales}) {
         }
         setFilteredSales(filtered);
       }, [sales, filters])
-
+      
     return {filters, filteredSales, setFilters}
 }
 export {useFilter}

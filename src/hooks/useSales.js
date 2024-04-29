@@ -6,10 +6,10 @@ function useSales({closeModal}) {
         return sales.map(sale => Number(sale.Amount)).reduce((acum, val) => acum + val, 0).toFixed(2);
       }, [sales]);
     function handleDelete(id) {
-    const newSales = [...sales];
-    const element = newSales.findIndex(element => element.ID === id)
-    newSales.splice(element, 1);
-    setSales(newSales)
+      const newSales = [...sales];
+      const element = newSales.findIndex(element => element.ID === id)
+      newSales.splice(element, 1);
+      setSales(newSales)
     }
     function handleSales({event, quantity, file}) {
         event.preventDefault()
@@ -25,7 +25,6 @@ function useSales({closeModal}) {
           SecretDate: actualDate
         }
         newSales.push(newSale);
-        console.log(newSale)
         setSales(newSales);
         closeModal()
     }

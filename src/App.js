@@ -6,6 +6,7 @@ import { Modal } from './components/Modal/Modal';
 import { SaleForm } from './components/SaleForm/SaleForm';
 import { UserNewForm } from './components/UserNewForm/UserNewForm';
 import { Sales } from './components/Sales/Sales';
+import { FiltersSection } from './components/Filters/Filters'
 import { useIntroduction } from './hooks/useIntroduction';
 import { useSales } from './hooks/useSales';
 import { useModal } from './hooks/useModal';
@@ -23,7 +24,7 @@ function App() {
   return (<main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
-        
+        <FiltersSection activeFilter={filters} handleFilters={setFilters}/>
       </section>
         <section className='salessinglecontainer'>
           <Sales salesArray={filteredSales} handleDelete={handleDelete} />
