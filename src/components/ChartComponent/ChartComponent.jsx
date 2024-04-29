@@ -2,8 +2,6 @@ import { Chart, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 Chart.register(...registerables)
 
-
-
 function ChartComponent ({sales}) {
     const labels = sales.map(singleSale => singleSale.Date);
     const data = {

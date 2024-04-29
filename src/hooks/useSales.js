@@ -16,13 +16,15 @@ function useSales({closeModal}) {
         if (quantity === '' || !file) return
         let newSales = [...sales]
         let actualDate = moment();
-        newSales.push({
+        const newSale = {
           Amount: quantity,
           Date: `${actualDate.format('DD-MM-YYYY')}`,
           Hour: `${actualDate.hour()}:${actualDate.minute()}`,
           File: file,
-          ID: actualDate.format('YYYYMMDDHHmm')
-        });
+          ID: actualDate.format('YYYYMMDDHHmmss')
+        }
+        newSales.push(newSale);
+        console.log(newSale)
         setSales(newSales);
         closeModal()
     }
