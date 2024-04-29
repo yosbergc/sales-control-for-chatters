@@ -21,15 +21,15 @@ function App() {
   return (<main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
-        <Sales salesArray={sales} handleDelete={handleDelete} />
+        
       </section>
         <section className='salessinglecontainer'>
-          
+          <Sales salesArray={sales} handleDelete={handleDelete} />
         </section>
     </section>
     <section className='secondPart'>
       <section className='estadisticas'>
-        <ChartComponent/>
+        <ChartComponent sales={sales}/>
       </section>
       <ShowInfoSection meta={metaSemanal} totalGenerado={totalGenerado}/>
     </section>
