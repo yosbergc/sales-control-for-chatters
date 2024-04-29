@@ -8,22 +8,15 @@ import { UserNewForm } from './components/UserNewForm/UserNewForm';
 import { Sales } from './components/Sales/Sales';
 import { useIntroduction } from './hooks/useIntroduction';
 import { useSales } from './hooks/useSales';
-
+import { useModal } from './hooks/useModal';
 import React from 'react';
 
 
 function App() {
-  const [isModalActive, setIsModalActive] = React.useState(false)
+  const {isModalActive, handleModal, closeModal} = useModal()
   const [metaSemanal, setMetaSemanal] = React.useState(0)
   const {userNew, addNewUser} = useIntroduction({setMetaSemanal});
   const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
-  
-  function handleModal() {
-    setIsModalActive(!isModalActive);
-  }
-  function closeModal() {
-    setIsModalActive(false);
-  }
   
   return (<main>
     <section className='SaleList'>
