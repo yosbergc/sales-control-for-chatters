@@ -2,8 +2,14 @@ import { Chart, registerables } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 Chart.register(...registerables)
 
-function ChartComponent ({sales}) {
-    const labels = sales.map(singleSale => singleSale.Date);
+function ChartComponent ({sales, filters}) {
+    const labels = sales.map(singleSale => {
+        if (filters.today === true) {
+            return singleSale.Hour;
+        } else {
+            return singleSale.Date;
+        }
+    });
     const data = {
         labels,
         datasets: [

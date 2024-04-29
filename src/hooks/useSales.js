@@ -21,7 +21,8 @@ function useSales({closeModal}) {
           Date: `${actualDate.format('DD-MM-YYYY')}`,
           Hour: `${actualDate.hour()}:${actualDate.minute()}`,
           File: file,
-          ID: actualDate.format('YYYYMMDDHHmmss')
+          ID: actualDate.format('YYYYMMDDHHmmss'),
+          SecretDate: actualDate
         }
         newSales.push(newSale);
         console.log(newSale)

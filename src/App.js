@@ -9,6 +9,7 @@ import { Sales } from './components/Sales/Sales';
 import { useIntroduction } from './hooks/useIntroduction';
 import { useSales } from './hooks/useSales';
 import { useModal } from './hooks/useModal';
+import { useFilter } from './hooks/useFilter';
 import React from 'react';
 
 
@@ -17,19 +18,20 @@ function App() {
   const [metaSemanal, setMetaSemanal] = React.useState(0)
   const {userNew, addNewUser} = useIntroduction({setMetaSemanal});
   const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
-  
+  const {filters, filteredSales, setFilters} = useFilter({sales});
+  console.log(filteredSales)
   return (<main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
         
       </section>
         <section className='salessinglecontainer'>
-          <Sales salesArray={sales} handleDelete={handleDelete} />
+          <Sales salesArray={filteredSales} handleDelete={handleDelete} />
         </section>
     </section>
     <section className='secondPart'>
       <section className='estadisticas'>
-        <ChartComponent sales={sales}/>
+        <ChartComponent sales={sales} filters={filters}/>
       </section>
       <ShowInfoSection meta={metaSemanal} totalGenerado={totalGenerado}/>
     </section>
