@@ -66,11 +66,7 @@ form label span {
     object-fit: cover;
     border-radius: 10px;
 }
-<<<<<<< Updated upstream
 form select {
-=======
-select {
->>>>>>> Stashed changes
     height: 40px;
     width: 100%;
     padding: 5px 10px;

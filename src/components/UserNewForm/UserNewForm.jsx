@@ -12,10 +12,6 @@ function UserNewForm({onSubmit}) {
         if (nombre !== '' && metaSemanal !== '') {
             onSubmit(nombre, genero, metaSemanal)
         }
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
     }
     return <form onSubmit={handleSubmit}>
         <label htmlFor="nombre">Tu nombre</label>
