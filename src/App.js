@@ -7,6 +7,7 @@ import { SaleForm } from './components/SaleForm/SaleForm';
 import { UserNewForm } from './components/UserNewForm/UserNewForm';
 import { Sales } from './components/Sales/Sales';
 import { FiltersSection } from './components/Filters/Filters'
+import { Header } from './components/Header/Header';
 import { useIntroduction } from './hooks/useIntroduction';
 import { useSales } from './hooks/useSales';
 import { useModal } from './hooks/useModal';
@@ -20,8 +21,10 @@ function App() {
   const {userNew, addNewUser} = useIntroduction({setMetaSemanal});
   const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
   const {filters, filteredSales, setFilters} = useFilter({sales});
-  console.log(filteredSales)
-  return (<main>
+  return (
+  <>
+  <Header/>
+  <main>
     <section className='SaleList'>
       <section className='SaleListFilters'>
         <FiltersSection activeFilter={filters} handleFilters={setFilters}/>
@@ -43,7 +46,9 @@ function App() {
     {userNew === true && <Modal>
         <UserNewForm onSubmit={addNewUser}/>
       </Modal>}
-  </main>)
+  </main>
+  </>
+  )
 }
 
 export default App;

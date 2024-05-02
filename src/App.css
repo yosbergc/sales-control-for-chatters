@@ -6,13 +6,13 @@
     --accent-color: rgb(6, 18, 255);
 }
 .SaleList {
-    width: fit-content;
+    width: 100%;
     max-width: calc(100% - 20px);
     padding: 20px;
     position: relative;
     overflow-x: hidden;
     background-color: var(--main-component-color);
-    margin: 0 auto;
+
 }
 .salessinglecontainer {
     overflow: auto;
