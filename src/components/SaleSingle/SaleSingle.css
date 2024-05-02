@@ -1,6 +1,6 @@
 .sale-single-container {
     padding: 20px;
-    width: fit-content;
+    width: 100%;
     margin: 10px auto;
     background-color: var(--main-hover-component-color);
     border-radius: 8px;
