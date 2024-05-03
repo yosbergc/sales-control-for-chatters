@@ -2,9 +2,33 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    display: none;
 }
 .menu a {
     color: white;
     text-decoration: none;
     font-weight: 600;
+}
+.menu-container {
+    display: flex;
+    align-self: center;
+    position: relative;
+}
+.mobile-active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 5;
+    background-color: rgb(59, 53, 53);
+    padding: 20px;
+    left: 0px;
+    top: 40px;
+}
+@media (min-width: 1200px) {
+    .menu {
+        display: flex;
+    }
+    .menuIcon {
+        display: none;
+    }
 }
