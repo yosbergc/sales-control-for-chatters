@@ -1,19 +1,22 @@
-import ProfilePhoto from '../../images/profile.jpeg'
+import { UserInfo } from '../UserInfo/UserInfo'
+import { Dropdown } from '../Dropdown/Dropdown'
 import { Menu } from '../Menu/Menu'
+import { DropdownItem } from '../DropdownItem/DropdownItem'
 import './header.css'
 function Header () {
     return (
         <header>
           <Menu>
-            <a href='#xs'>Dashboard</a>
+            <a href='#xs'>Panel</a>
             <a href='#xs'>Horario</a>
-            <a href='#xs'>Notificaciones</a>
-            <a href='#xs'>Notas</a>
+            <a href='#xs'>Mensajes</a>
+            <a href='#xs'>Ganancias</a>
           </Menu>
-          <section className='user-header'>
-            <img src={ProfilePhoto} alt='User Name'/>
-            <p>Macaco</p>
-          </section>
+          <Dropdown visible={<UserInfo/>}>
+            <DropdownItem>Cuenta</DropdownItem>
+            <DropdownItem>Perfil</DropdownItem>
+            <DropdownItem>Cerrar sesión</DropdownItem>
+          </Dropdown>
         </header>
     )
 }

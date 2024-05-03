@@ -1,9 +1,10 @@
 .menu {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 .menu a {
     color: white;
     text-decoration: none;
+    font-weight: 600;
 }
