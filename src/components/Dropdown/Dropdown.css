@@ -22,6 +22,7 @@
     padding: 5px;
     cursor: pointer;
     border-radius: 4px;
+    transition: 0.2s ease-in-out;
 }
 .visiblePart:hover {
     background-color: var(--main-hover-component-color);
