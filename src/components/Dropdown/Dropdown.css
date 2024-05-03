@@ -4,6 +4,8 @@
 .hiddenPart {
     position: absolute;
     right: 0px;
+    margin-top: 10px;
+    min-width: 100%;
 }
 .dropdown-list {
     background-color: rgb(59, 53, 53);
@@ -12,4 +14,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+.visiblePart {
+    display: flex;
+    align-items: center;
+    color: var(--main-text);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.visiblePart:hover {
+    background-color: var(--main-hover-component-color);
+    width: fit-content;
 }

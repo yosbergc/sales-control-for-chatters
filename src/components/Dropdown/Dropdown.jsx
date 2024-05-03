@@ -1,4 +1,5 @@
 import React from "react"
+import { FaAngleDown } from "react-icons/fa"
 import './Dropdown.css'
 function Dropdown ({visible, children}) {
     const [isClicked, setIsClicked] = React.useState(false);
@@ -8,7 +9,7 @@ function Dropdown ({visible, children}) {
     return (
         <section className="dropdown">
             <section className="visiblePart" onClick={handleClick}>
-                {visible}
+                {visible} <FaAngleDown size={20}/>
             </section>
             <section className="hiddenPart">
                 {isClicked && <section className="dropdown-list">

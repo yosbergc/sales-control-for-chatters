@@ -17,9 +17,4 @@ header img {
     font-weight: 600;
     color: white;
     padding: 5px 10px;
-    cursor: pointer;
-}
-.user-header:hover {
-    background-color: var(--main-hover-component-color);
-    width: fit-content;
 }
