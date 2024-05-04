@@ -1,17 +1,17 @@
 import './App.css';
-import { ChartComponent } from './components/ChartComponent/ChartComponent';
-import { OpenModal } from './components/OpenModal/OpenModal';
-import { ShowInfoSection } from './components/ShowInfoSection/ShowInfoSection';
-import { Modal } from './components/Modal/Modal';
-import { SaleForm } from './components/SaleForm/SaleForm';
-import { UserNewForm } from './components/UserNewForm/UserNewForm';
-import { Sales } from './components/Sales/Sales';
-import { FiltersSection } from './components/Filters/Filters'
-import { Header } from './components/Header/Header';
-import { useIntroduction } from './hooks/useIntroduction';
-import { useSales } from './hooks/useSales';
-import { useModal } from './hooks/useModal';
-import { useFilter } from './hooks/useFilter';
+import { ChartComponent } from '../components/ChartComponent/ChartComponent';
+import { OpenModal } from '../components/OpenModal/OpenModal';
+import { ShowInfoSection } from '../components/ShowInfoSection/ShowInfoSection';
+import { Modal } from '../components/Modal/Modal';
+import { SaleForm } from '../components/SaleForm/SaleForm';
+import { UserNewForm } from '../components/UserNewForm/UserNewForm';
+import { Sales } from '../components/Sales/Sales';
+import { FiltersSection } from '../components/Filters/Filters'
+import { Header } from '../components/Header/Header';
+import { useIntroduction } from '../hooks/useIntroduction';
+import { useSales } from '../hooks/useSales';
+import { useModal } from '../hooks/useModal';
+import { useFilter } from '../hooks/useFilter';
 import React from 'react';
 
 
