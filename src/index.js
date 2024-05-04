@@ -8,6 +8,7 @@ import { EarningPages } from './routes/EarningsPage'
 import { AccountPage } from './routes/AccountPage'
 import { ProfilePage } from './routes/ProfilePage'
 import { WarningsPage } from './routes/WarningsPage'
+import { NotFound } from './routes/NotFound';
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -22,6 +23,7 @@ root.render(
             <Route path='/panel/advertencias' element={<WarningsPage/>}/>
             <Route path='/cuenta' element={<AccountPage/>}/>
             <Route path='/perfil' element={<ProfilePage/>}/>
+            <Route path='*' element={<NotFound/>}/>
         </Routes>
     </Router>
 );

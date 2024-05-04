@@ -3,7 +3,7 @@ function UserInfo () {
     return (
         <section className='user-header'>
             <img src={ProfilePhoto} alt='User Name'/>
-            <p>Macaco</p>
+            <p>Santiago</p>
         </section>
     )
 }
