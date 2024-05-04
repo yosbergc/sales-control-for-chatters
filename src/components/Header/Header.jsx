@@ -14,7 +14,7 @@ function Header () {
             <a href='#xs'>Horario</a>
             <a href='#xs'>Mensajes</a>
             <a href='#xs'>Ganancias</a>
-            <a href='#xs'>Amonestación</a>
+            <a href='#xs'>Amonestaciones</a>
           </Menu>
           <Dropdown visible={<UserInfo/>}>
             <DropdownItem><FaGear size={20}/>Cuenta</DropdownItem>
