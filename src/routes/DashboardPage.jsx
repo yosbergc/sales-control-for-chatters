@@ -1,4 +1,4 @@
-import './DashboardPage.css';
+import './css/DashboardPage.css';
 import { ChartComponent } from '../components/ChartComponent/ChartComponent';
 import { OpenModal } from '../components/OpenModal/OpenModal';
 import { ShowInfoSection } from '../components/ShowInfoSection/ShowInfoSection';

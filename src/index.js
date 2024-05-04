@@ -7,6 +7,7 @@ import { MessagePage } from './routes/MessagesPage'
 import { EarningPages } from './routes/EarningsPage'
 import { AccountPage } from './routes/AccountPage'
 import { ProfilePage } from './routes/ProfilePage'
+import { WarningsPage } from './routes/WarningsPage'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,6 +19,7 @@ root.render(
             <Route path='/panel/horario' element={<SchedulePage/>}/>
             <Route path='/panel/mensajes' element={<MessagePage/>}/>
             <Route path='/panel/ganancias' element={<EarningPages/>}/>
+            <Route path='/panel/advertencias' element={<WarningsPage/>}/>
             <Route path='/cuenta' element={<AccountPage/>}/>
             <Route path='/perfil' element={<ProfilePage/>}/>
         </Routes>
