@@ -9,10 +9,16 @@ function SaleForm ({onSubmit}) {
             setFile(event.target.files[0]);
         }
     }
-    return (<form onSubmit={(event) => {
+    const handleSubmit = (event) => {
         const quantity = quantityRef.current.value;
         onSubmit({event, quantity, file})
-    }}>
+    }
+    const handlePaste = (event) => {
+        const dT = event.clipboardData || window.clipboardData;
+        const file = dT.files[0];
+        setFile(file);
+    }
+    return (<form onSubmit={handleSubmit} onPaste={handlePaste}>
         <label htmlFor="quantity">Cantidad vendida</label>
         <input type="number" name="quantity" placeholder="Monto vendido" id="quantity" ref={quantityRef} step={0.01} autoComplete='off' autoFocus/>
         <label htmlFor="screenshot" className={`uploadFile ${file && "fileadded"}`}>
