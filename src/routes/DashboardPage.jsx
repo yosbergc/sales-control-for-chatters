@@ -4,11 +4,9 @@ import { OpenModal } from '../components/OpenModal/OpenModal';
 import { ShowInfoSection } from '../components/ShowInfoSection/ShowInfoSection';
 import { Modal } from '../components/Modal/Modal';
 import { SaleForm } from '../components/SaleForm/SaleForm';
-import { UserNewForm } from '../components/UserNewForm/UserNewForm';
 import { Sales } from '../components/Sales/Sales';
 import { FiltersSection } from '../components/Filters/Filters'
 import { Header } from '../components/Header/Header';
-import { useIntroduction } from '../hooks/useIntroduction';
 import { useSales } from '../hooks/useSales';
 import { useModal } from '../hooks/useModal';
 import { useFilter } from '../hooks/useFilter';
@@ -17,10 +15,15 @@ import React from 'react';
 
 function App() {
   const {isModalActive, handleModal, closeModal} = useModal()
-  const [metaSemanal, setMetaSemanal] = React.useState(0)
-  const {userNew, addNewUser} = useIntroduction({setMetaSemanal});
+  const [metaSemanal, setMetaSemanal] = React.useState(3000)
   const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
   const {filters, filteredSales, setFilters} = useFilter({sales});
+  const [user, setUser] = React.useState(null)
+  React.useEffect(() => {
+    if (!user) {
+      
+    }
+  }, [])
   return (
   <>
   <Header/>
@@ -42,9 +45,6 @@ function App() {
     <OpenModal onClick={handleModal}/>
     {isModalActive && <Modal onClick={handleModal}>
         <SaleForm onSubmit={handleSales}/>
-      </Modal>}
-    {userNew === true && <Modal>
-        <UserNewForm onSubmit={addNewUser}/>
       </Modal>}
   </main>
   </>
