@@ -1,7 +1,7 @@
 import './dropdownitem.css'
-function DropdownItem ({children}) {
+function DropdownItem ({children, onClick}) {
     return (
-        <section className="dropdown-item">
+        <section className="dropdown-item" onClick={onClick}>
             {children}
         </section>
     )
