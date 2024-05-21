@@ -1,12 +1,20 @@
 .menu {
-    gap: 30px;
     align-items: center;
     display: none;
+    gap: 10px;
 }
 .menu a {
     color: white;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 4px;
+    transition: 0.2s ease-in;
+}
+.menu a:hover {
+    background-color: var(--main-hover-component-color);
+    
 }
 .menu-container {
     display: flex;

@@ -20,7 +20,7 @@ import React from 'react';
 function App() {
   const {isModalActive, handleModal, closeModal} = useModal()
   const [metaSemanal, setMetaSemanal] = React.useState(null)
-  const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
+  const {sales, totalGenerado, handleDelete, handleSales, gotSales} = useSales({closeModal});
   const {filters, filteredSales, setFilters} = useFilter({sales});
   const { user, setUser } = React.useContext(userContext)
   const navigate = useNavigate()
@@ -37,6 +37,9 @@ function App() {
     getUserInformation(user.token)
     .then(info => {
       setMetaSemanal(info.weeklyGoal)
+      if (info.sales.length > 0) {
+        gotSales(info.sales)
+      }
     })
     .catch(error => {
       console.log(error)

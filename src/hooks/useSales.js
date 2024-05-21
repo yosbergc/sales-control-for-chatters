@@ -43,6 +43,9 @@ function useSales({closeModal}) {
         })
         
     }
-    return {sales, totalGenerado, handleDelete, handleSales}
+    function gotSales(saleList) {
+      console.log(saleList)
+    }
+    return {sales, totalGenerado, handleDelete, handleSales, gotSales}
 }
 export { useSales }

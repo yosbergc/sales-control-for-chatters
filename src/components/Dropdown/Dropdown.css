@@ -11,10 +11,10 @@
 .dropdown-list {
     background-color: rgb(59, 53, 53);
     color: var(--main-text);
-    padding: 20px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 .visiblePart {
     display: flex;

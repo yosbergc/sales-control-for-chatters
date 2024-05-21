@@ -3,19 +3,24 @@ import { userLogin } from '../../services/userLogin'
 import React from 'react'
 import { userContext } from '../../context/userContext'
 import { useNavigate } from 'react-router-dom'
+import { Loading } from '../Loading/Loading'
 function LoginForm () {
+    const [isLoading, setIsloading] = React.useState(false)
     const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault()
+        setIsloading(true)
         userLogin(email, password)
         .then(res => {
             res.json().then(response => {
+                setIsloading(false)
                 if (response.error) {
                     setError(response.error)
                     setTimeout(() => {
                         setError(false)
                     }, 5000)
                 } else {
+                    setIsloading(false)
                     setUser(response)
                     window.localStorage.setItem('userLogged', JSON.stringify(response))
                     navigate('/panel')
@@ -43,6 +48,7 @@ function LoginForm () {
             
             {error && <p className='errorName'>{error}</p>}
         </form>
+        {isLoading && <Loading />}
     </section>
     )
 }
