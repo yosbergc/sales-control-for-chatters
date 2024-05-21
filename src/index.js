@@ -3,8 +3,8 @@ import './index.css';
 import App from './routes/DashboardPage';
 import { LoginPage } from './routes/LoginPage';
 import { SchedulePage } from './routes/SchedulePage'
-import { MessagePage } from './routes/MessagesPage'
-import { EarningPages } from './routes/EarningsPage'
+import { MessagePage } from './routes/MessagePage'
+import { EarningPage } from './routes/EarningPage'
 import { AccountPage } from './routes/AccountPage'
 import { ProfilePage } from './routes/ProfilePage'
 import { WarningsPage } from './routes/WarningsPage'
@@ -21,7 +21,7 @@ root.render(
                 <Route path='/panel' element={<App/>}/>
                 <Route path='/panel/horario' element={<SchedulePage/>}/>
                 <Route path='/panel/mensajes' element={<MessagePage/>}/>
-                <Route path='/panel/ganancias' element={<EarningPages/>}/>
+                <Route path='/panel/ganancias' element={<EarningPage/>}/>
                 <Route path='/panel/advertencias' element={<WarningsPage/>}/>
                 <Route path='/cuenta' element={<AccountPage/>}/>
                 <Route path='/perfil' element={<ProfilePage/>}/>

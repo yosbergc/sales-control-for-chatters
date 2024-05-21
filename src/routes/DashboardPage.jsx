@@ -13,12 +13,13 @@ import { useModal } from '../hooks/useModal';
 import { useFilter } from '../hooks/useFilter';
 import { useNavigate } from "react-router-dom";
 import { userContext } from "../context/userContext"
+import { getUserInformation } from '../services/userInformation';
 import React from 'react';
 
 
 function App() {
   const {isModalActive, handleModal, closeModal} = useModal()
-  const [metaSemanal, setMetaSemanal] = React.useState(3000)
+  const [metaSemanal, setMetaSemanal] = React.useState(null)
   const {sales, totalGenerado, handleDelete, handleSales} = useSales({closeModal});
   const {filters, filteredSales, setFilters} = useFilter({sales});
   const { user, setUser } = React.useContext(userContext)
@@ -33,7 +34,13 @@ function App() {
       navigate('/')
     }
     if (!user) return
-    setMetaSemanal(user.weeklyGoal)
+    getUserInformation(user.token)
+    .then(info => {
+      setMetaSemanal(info.weeklyGoal)
+    })
+    .catch(error => {
+      console.log(error)
+    })
   }, [user])
   return (
   <>

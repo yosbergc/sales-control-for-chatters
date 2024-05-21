@@ -12,6 +12,9 @@ function LoginForm () {
             res.json().then(response => {
                 if (response.error) {
                     setError(response.error)
+                    setTimeout(() => {
+                        setError(false)
+                    }, 5000)
                 } else {
                     setUser(response)
                     window.localStorage.setItem('userLogged', JSON.stringify(response))
@@ -24,15 +27,10 @@ function LoginForm () {
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [error, setError] = React.useState(false)
-    React.useEffect(() => {
-        setTimeout(() => {
-            setError(false)
-        }, 5000)
-    }, [error])
     return (
     <section className="loginPage">
         <form onSubmit={handleSubmit}>
-            <h2>Chatter Login</h2>
+            <h2>Iniciar sesión</h2>
             <label htmlFor="loginFormEmail">Usuario</label>
             <input type="text" id="loginFormEmail" value={email} onChange={(e) => {
                 setEmail(e.target.value)

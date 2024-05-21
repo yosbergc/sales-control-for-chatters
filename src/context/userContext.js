@@ -1,5 +1,4 @@
 import React from "react";
-
 const userContext = React.createContext()
 
 function ProvideUserContext({children}) {
@@ -8,6 +7,7 @@ function ProvideUserContext({children}) {
         localStorage.clear()
         setUser(null)
     }
+
     return <userContext.Provider value={{
         user,
         setUser,
