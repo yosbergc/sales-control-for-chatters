@@ -5,12 +5,12 @@ function Sales ({salesArray, handleDelete}) {
         <>
         {salesArray.length > 0 ? 
         salesArray.map(sale => <SaleSingle 
-        Amount={sale.Amount}
-        Date={sale.Date}
-        Hour={sale.Hour}
-        File={sale.File}
-        key={sale.ID}
-        ID={sale.ID}
+        Amount={sale.amount}
+        Date={sale.date}
+        Hour={sale.hour}
+        imgsrc={sale.imgsource}
+        key={sale.id}
+        ID={sale.id}
         onDelete={handleDelete}
         />) : <NoSales/>}
         </>

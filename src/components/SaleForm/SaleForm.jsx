@@ -19,15 +19,44 @@ function SaleForm ({onSubmit}) {
         setFile(file);
     }
     return (<form onSubmit={handleSubmit} onPaste={handlePaste}>
-        <label htmlFor="quantity">Cantidad vendida</label>
-        <input type="number" name="quantity" placeholder="Monto vendido" id="quantity" ref={quantityRef} step={0.01} autoComplete='off' autoFocus/>
-        <label htmlFor="screenshot" className={`uploadFile ${file && "fileadded"}`}>
+        <label htmlFor="quantity">
+            Cantidad vendida
+        </label>
+        <input
+        type="number"
+        name="quantity"
+        placeholder="Monto vendido"
+        id="quantity"
+        ref={quantityRef}
+        step={0.01}
+        autoComplete='off'
+        autoFocus
+        />
+
+        <label
+        htmlFor="uploadImage"
+        className={`uploadFile ${file && "fileadded"}`}>
             <span>
-                <MdOutlineUploadFile color='white' size={30} className='icon'/> {file ? "Archivo agregado" : "Archivo a subir"}
+                <MdOutlineUploadFile
+                color='white'
+                size={30}
+                className='icon'/>
+                {
+                file ? "Archivo agregado"
+                    : "Archivo a subir"}
             </span>
         </label>
-        <input type="file" name="screenshot" id="screenshot" onChange={handleFile}/>
-        {file && <img src={window.URL.createObjectURL(file)} alt='Captura de pantalla' className='imageAdded'></img>}
+        <input type="file"
+        name="uploadImage"
+        id="uploadImage"
+        onChange={handleFile}
+        />
+        {
+        file && 
+        <img src={window.URL.createObjectURL(file)}
+        alt='Captura de pantalla'
+        className='imageAdded'/>
+        }
         <button>Agregar venta</button>
     </form>)
 }

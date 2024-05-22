@@ -5,16 +5,16 @@ Chart.register(...registerables)
 function ChartComponent ({sales, filters}) {
     const labels = sales.map(singleSale => {
         if (filters.today === true) {
-            return singleSale.Hour;
+            return singleSale.hour;
         } else {
-            return singleSale.Date;
+            return singleSale.date;
         }
     });
     const data = {
         labels,
         datasets: [
             {
-            data: sales.map(singleSale => singleSale.Amount),
+            data: sales.map(singleSale => singleSale.amount),
             borderColor: 'BLUE',
             backgroundColor: 'rgba(16, 25, 211, 0.20)',
             fill: true,

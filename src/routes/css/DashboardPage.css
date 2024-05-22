@@ -17,6 +17,7 @@
 .salessinglecontainer {
     overflow: auto;
     display: flex;
+    flex-direction: column;
 }
 .SaleList > * {
     margin-bottom: 10px;

@@ -3,13 +3,13 @@ import { TbMoneybag } from "react-icons/tb";
 import { MdOutlineDateRange } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-function SaleSingle ({Amount, Date, Hour, File, ID, onDelete}) {
+function SaleSingle ({Amount, Date, Hour, imgsrc, ID, onDelete}) {
     const handleDelete = () => {
         onDelete(ID)
     }
     return (<section className="sale-single-container">
         <IoIosCloseCircleOutline size={'25px'} className='close' onClick={handleDelete}/>
-        <img src={window.URL.createObjectURL(File)} alt='Sale Single Screenshot'></img>
+        <img src={imgsrc} alt='Sale Single Screenshot'></img>
         <div className="sale-info">
             <div className="quantity-sell">
                 <div className="left">

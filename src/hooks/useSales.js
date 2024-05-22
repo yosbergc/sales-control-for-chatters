@@ -7,7 +7,7 @@ function useSales({closeModal}) {
     const { user } = useContext(userContext)
     const [sales, setSales] = React.useState([])
     const totalGenerado = React.useMemo(() => {
-        return sales.map(sale => Number(sale.Amount)).reduce((acum, val) => acum + val, 0).toFixed(2);
+        return sales.map(sale => Number(sale.amount)).reduce((acum, val) => acum + val, 0).toFixed(2);
       }, [sales]);
     function handleDelete(id) {
       const newSales = [...sales];
@@ -21,16 +21,25 @@ function useSales({closeModal}) {
         let newSales = [...sales]
         let actualDate = moment();
         const newSale = {
-          Amount: quantity,
-          Date: `${actualDate.format('DD-MM-YYYY')}`,
-          Hour: `${actualDate.hour()}:${actualDate.minute()}`,
+          amount: quantity,
+          date: `${actualDate.format('DD-MM-YYYY')}`,
+          hour: `${actualDate.hour()}:${actualDate.minute()}`,
           File: file,
+          imgsource: '',
           SecretDate: actualDate
         }
-        addSaleToDB(newSale, user.token)
+
+        const formData = new FormData()
+        formData.append("amount", newSale.amount)
+        formData.append("date", newSale.date)
+        formData.append("hour", newSale.hour)
+        formData.append("uploadImage", newSale.File)
+
+        addSaleToDB(formData, user.token)
         .then(res => {
           if (res.ok) {
             res.json().then(response => {
+              newSale.imgsource = response.imgsource
               newSale.ID = response.id
               newSales.push(newSale);
               setSales(newSales);
@@ -44,7 +53,7 @@ function useSales({closeModal}) {
         
     }
     function gotSales(saleList) {
-      console.log(saleList)
+      setSales(saleList)
     }
     return {sales, totalGenerado, handleDelete, handleSales, gotSales}
 }
