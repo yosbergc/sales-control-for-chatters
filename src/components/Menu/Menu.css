@@ -4,17 +4,16 @@
     gap: 10px;
 }
 .menu a {
-    color: white;
+    color: rgba(32, 32, 34, 0.573);
     text-decoration: none;
     font-weight: 400;
-    font-size: 1rem;
+    font-size: 14px;
     padding: 10px;
     border-radius: 4px;
     transition: 0.2s ease-in;
 }
 .menu a:hover {
-    background-color: var(--main-hover-component-color);
-    
+    color: rgb(9, 9, 11)
 }
 .menu-container {
     display: flex;
@@ -24,9 +23,10 @@
 .mobile-active {
     display: flex;
     flex-direction: column;
+    align-items: start;
     position: absolute;
     z-index: 5;
-    background-color: rgb(59, 53, 53);
+    background-color: rgb(255, 255, 255);
     padding: 20px;
     left: 0px;
     top: 40px;

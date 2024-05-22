@@ -9,7 +9,7 @@ function Dropdown ({visible, children}) {
     return (
         <section className="dropdown">
             <section className="visiblePart" onClick={handleClick}>
-                {visible} <FaAngleDown size={20}/>
+                {visible} <FaAngleDown size={15}/>
             </section>
             <section className="hiddenPart">
                 {isClicked && <section className="dropdown-list">

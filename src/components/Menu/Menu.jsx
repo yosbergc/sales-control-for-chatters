@@ -8,7 +8,7 @@ function Menu ({ children }) {
     }
     return (
     <section className='menu-container'>
-        <IoIosMenu size={30} color='white' className='menuIcon' onClick={handleClick}/>
+        <IoIosMenu size={30} color='black' className='menuIcon' onClick={handleClick}/>
         <section className={`menu ${isOpen && 'mobile-active'}`} >
             {children}
         </section>

@@ -1,10 +1,10 @@
 .sale-single-container {
     padding: 20px;
-    width: 100%;
+    width: fit-content;
     margin: 10px auto;
     background-color: var(--main-hover-component-color);
     border-radius: 8px;
-    color: var(--main-text);
+    color: black;
     display: flex;
     align-items: center;
     gap: 20px;
@@ -12,6 +12,7 @@
     transition: 0.2s ease-in-out;
     cursor: pointer;
     font-size: 14px;
+    width: 100%;
     justify-content: space-between;
 }
 .sale-single-container img {
@@ -47,9 +48,6 @@
     position: absolute;
     top: 5px;
     left: 5px;
-}
-.sale-single-container:hover {
-    background-color: rgb(0, 0, 0);
 }
 @media (min-width: 1200px) {
     .sale-single-container img {

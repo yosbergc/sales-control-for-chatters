@@ -1,20 +1,22 @@
 :root {
-    --main-body-color: #121313;
-    --main-component-color: #1d1d1d;
-    --main-hover-component-color: rgb(59, 53, 53);
-    --main-text: #fff;
+    --main-body-color: white;
+    --main-component-color: white;
+    --main-hover-component-color: #f4f4f5;
+    --main-text: #aaaaaa;
     --accent-color: rgb(6, 18, 255);
 }
 .SaleList {
     width: 100%;
-    max-width: calc(100% - 20px);
     padding: 20px;
     position: relative;
     overflow-x: hidden;
     background-color: var(--main-component-color);
+    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
+    margin: 20px auto;
 }
 .salessinglecontainer {
     overflow: auto;
+    display: flex;
 }
 .SaleList > * {
     margin-bottom: 10px;
@@ -24,12 +26,16 @@
     gap: 10px;
     margin-bottom: 20px;
     overflow-x: auto;
+    background-color: #f4f4f5;
+    border-radius: 5px;
+    padding: 10px;
 }
 .estadisticas {
     width: 100%;
     height: fit-content;
     background-color: var(--main-component-color);
     padding: 20px;
+    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
 }
 .modalInner {
     position: relative;
@@ -47,21 +53,26 @@
 .closeButton {
     cursor: pointer;
 }
+main {
+    margin: 10px;
+}
 @media (min-width: 1200px) {
     .SaleList {
         max-height: 92vh;
         overflow-y: scroll;
+        margin: 0px;
     }
     main {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin: 20px;
+        margin: 0px;
+        margin-top: 10px;
         align-items: stretch;
+        gap: 20px;
     }
     .estadisticas {
         max-width: 100%;
         min-height: 50vh;
-        margin: 0px auto;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 }

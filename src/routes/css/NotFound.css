@@ -10,7 +10,7 @@
     height: 100vh;
     display: grid;
     place-content: center;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
 }
 .notfoundmain button {

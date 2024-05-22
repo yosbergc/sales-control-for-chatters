@@ -15,8 +15,8 @@ function ShowInfoSection ({meta, totalGenerado}) {
             </section>
         </section>
         <section className="down">
-            <button><FaImages size={25}/> Obtener capturas</button>
-            <button><BiSolidDollarCircle size={25}/>Obtener total</button>
+            <button><FaImages size={15}/> Obtener capturas</button>
+            <button><BiSolidDollarCircle size={15}/>Obtener total</button>
         </section>
     </section>)
 }

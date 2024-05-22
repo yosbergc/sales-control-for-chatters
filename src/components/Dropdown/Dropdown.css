@@ -9,12 +9,13 @@
     z-index: 5;
 }
 .dropdown-list {
-    background-color: rgb(59, 53, 53);
+    background-color: white;
+    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
     color: var(--main-text);
     display: flex;
     flex-direction: column;
-    border-radius: 5px;
     overflow: hidden;
+    font-size: 14px;
 }
 .visiblePart {
     display: flex;

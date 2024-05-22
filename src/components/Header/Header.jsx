@@ -20,9 +20,9 @@ function Header () {
             <a href='#xs'>Amonestaciones</a>
           </Menu>
           <Dropdown visible={<UserInfo/>}>
-            <DropdownItem><FaGear size={20}/>Cuenta</DropdownItem>
-            <DropdownItem><MdOutlineAccountCircle size={20}/> Perfil</DropdownItem>
-            <DropdownItem onClick={handleLogout}><IoIosLogOut size={20}/> Cerrar sesión</DropdownItem>
+            <DropdownItem><FaGear size={15}/>Cuenta</DropdownItem>
+            <DropdownItem><MdOutlineAccountCircle size={15}/> Perfil</DropdownItem>
+            <DropdownItem onClick={handleLogout}><IoIosLogOut size={15}/> Cerrar sesión</DropdownItem>
           </Dropdown>
         </header>
     )

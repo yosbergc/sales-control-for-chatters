@@ -1,8 +1,9 @@
+@import url('non.geist');
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-family: "Helvetica", sans-serif;
+  font-family: 'Geist Variable';
 }
 body {
   background-color: var(--main-body-color);
