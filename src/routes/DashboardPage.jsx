@@ -8,6 +8,7 @@ import { SaleForm } from '../components/SaleForm/SaleForm';
 import { Sales } from '../components/Sales/Sales';
 import { FiltersSection } from '../components/Filters/Filters'
 import { Header } from '../components/Header/Header';
+import { Loading } from '../components/Loading/Loading'
 import { useSales } from '../hooks/useSales';
 import { useModal } from '../hooks/useModal';
 import { useFilter } from '../hooks/useFilter';
@@ -18,9 +19,10 @@ import React from 'react';
 
 
 function App() {
+  const [isLoading, setLoading] = React.useState(false)
   const {isModalActive, handleModal, closeModal} = useModal()
   const [metaSemanal, setMetaSemanal] = React.useState(null)
-  const {sales, totalGenerado, handleDelete, handleSales, gotSales} = useSales({closeModal});
+  const {sales, totalGenerado, handleDelete, handleSales, gotSales} = useSales({closeModal, setLoading});
   const {filters, filteredSales, setFilters} = useFilter({sales});
   const { user, setUser } = React.useContext(userContext)
   const navigate = useNavigate()
@@ -34,11 +36,15 @@ function App() {
       navigate('/')
     }
     if (!user) return
+    setLoading(true)
     getUserInformation(user.token)
     .then(info => {
       setMetaSemanal(info.weeklyGoal)
       if (info.sales.length > 0) {
         gotSales(info.sales)
+        setLoading(false)
+      } else {
+        setLoading(false)
       }
     })
     .catch(error => {
@@ -68,6 +74,7 @@ function App() {
         <SaleForm onSubmit={handleSales}/>
       </Modal>}
   </main>
+    {isLoading && <Loading />}
   </>
   )
 }

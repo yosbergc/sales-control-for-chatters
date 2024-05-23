@@ -3,7 +3,7 @@ import moment from 'moment';
 import { addSaleToDB, deleteSalefromDB } from '../services/sales';
 import { userContext } from '../context/userContext';
 import { useContext } from 'react';
-function useSales({closeModal}) {
+function useSales({closeModal, setLoading}) {
     const { user } = useContext(userContext)
     const [sales, setSales] = React.useState([])
     const totalGenerado = React.useMemo(() => {
@@ -11,6 +11,7 @@ function useSales({closeModal}) {
       }, [sales]);
 
     function handleDelete(id) {
+      setLoading(true)
       deleteSalefromDB(id, user.token)
       .then(res => {
         
@@ -20,7 +21,10 @@ function useSales({closeModal}) {
             const element = newSales.findIndex(element => element.id === id)
             newSales.splice(element, 1);
             setSales(newSales)
+            setLoading(false)
           })
+        } else {
+          setLoading(false)
         }
       })
       .catch(error => {
@@ -32,6 +36,7 @@ function useSales({closeModal}) {
     }
     function handleSales({event, quantity, file}) {
         event.preventDefault()
+        setLoading(true)
         if (quantity === '' || !file) return
         let newSales = [...sales]
         let actualDate = moment();
@@ -59,7 +64,10 @@ function useSales({closeModal}) {
               newSales.push(newSale);
               setSales(newSales);
               closeModal()
+              setLoading(false)
             })
+          } else {
+            setLoading(false)
           }
         })
         .catch(error => {
