@@ -3,7 +3,7 @@
     height: 100vh;
     display: grid;
     align-items: center;
-    color: black;
+    color: var(--main-text);
 }
 .loginPage form {
     margin: 0 auto;

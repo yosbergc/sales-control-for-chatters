@@ -1,17 +1,10 @@
-:root {
-    --main-body-color: white;
-    --main-component-color: white;
-    --main-hover-component-color: #f4f4f5;
-    --main-text: #aaaaaa;
-    --accent-color: rgb(6, 18, 255);
-}
 .SaleList {
     width: 100%;
     padding: 20px;
     position: relative;
     overflow-x: hidden;
     background-color: var(--main-component-color);
-    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
+    border: 0.661157px solid  var(--border);
     margin: 20px auto;
 }
 .salessinglecontainer {
@@ -27,7 +20,7 @@
     gap: 10px;
     margin-bottom: 20px;
     overflow-x: auto;
-    background-color: #f4f4f5;
+    background-color: var(--main-hover-component-color);
     border-radius: 5px;
     padding: 10px;
 }
@@ -36,7 +29,7 @@
     height: fit-content;
     background-color: var(--main-component-color);
     padding: 20px;
-    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
+    border: 0.661157px solid  var(--border);
 }
 .modalInner {
     position: relative;

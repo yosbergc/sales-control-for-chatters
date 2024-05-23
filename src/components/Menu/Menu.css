@@ -4,7 +4,7 @@
     gap: 10px;
 }
 .menu a {
-    color: rgba(32, 32, 34, 0.573);
+    color: var(--acent-text);
     text-decoration: none;
     font-weight: 400;
     font-size: 14px;
@@ -13,7 +13,7 @@
     transition: 0.2s ease-in;
 }
 .menu a:hover {
-    color: rgb(9, 9, 11)
+    color: var(--hover-text)
 }
 .menu-container {
     display: flex;
@@ -26,7 +26,7 @@
     align-items: start;
     position: absolute;
     z-index: 5;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--main-component-color);
     padding: 20px;
     left: 0px;
     top: 40px;

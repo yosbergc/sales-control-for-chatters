@@ -9,8 +9,8 @@
     z-index: 5;
 }
 .dropdown-list {
-    background-color: white;
-    border: 0.661157px solid  rgba(222, 222, 222, 0.991);
+    background-color: var(--main-component-color);
+    border: 0.661157px solid var(--border);
     color: var(--main-text);
     display: flex;
     flex-direction: column;

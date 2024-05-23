@@ -1,5 +1,5 @@
 .filter-single {
-    color: #343436;
+    color: var(--main-text);
     padding: 5px 10px;
     width: max-content;
     border-radius: 5px;
