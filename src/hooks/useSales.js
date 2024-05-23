@@ -1,6 +1,6 @@
 import React from 'react'
 import moment from 'moment';
-import { addSaleToDB } from '../services/sales';
+import { addSaleToDB, deleteSalefromDB } from '../services/sales';
 import { userContext } from '../context/userContext';
 import { useContext } from 'react';
 function useSales({closeModal}) {
@@ -9,11 +9,26 @@ function useSales({closeModal}) {
     const totalGenerado = React.useMemo(() => {
         return sales.map(sale => Number(sale.amount)).reduce((acum, val) => acum + val, 0).toFixed(2);
       }, [sales]);
+
     function handleDelete(id) {
-      const newSales = [...sales];
-      const element = newSales.findIndex(element => element.ID === id)
-      newSales.splice(element, 1);
-      setSales(newSales)
+      deleteSalefromDB(id, user.token)
+      .then(res => {
+        
+        if (res.ok) {
+          res.json().then(response => {
+            const newSales = [...sales];
+            const element = newSales.findIndex(element => element.id === id)
+            newSales.splice(element, 1);
+            setSales(newSales)
+          })
+        }
+      })
+      .catch(error => {
+
+      })
+      
+
+      
     }
     function handleSales({event, quantity, file}) {
         event.preventDefault()
@@ -40,7 +55,7 @@ function useSales({closeModal}) {
           if (res.ok) {
             res.json().then(response => {
               newSale.imgsource = response.imgsource
-              newSale.ID = response.id
+              newSale.id = response.id
               newSales.push(newSale);
               setSales(newSales);
               closeModal()

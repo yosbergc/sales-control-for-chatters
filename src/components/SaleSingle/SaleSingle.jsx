@@ -3,9 +3,9 @@ import { TbMoneybag } from "react-icons/tb";
 import { MdOutlineDateRange } from "react-icons/md";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 
-function SaleSingle ({Amount, Date, Hour, imgsrc, ID, onDelete}) {
+function SaleSingle ({Amount, Date, Hour, imgsrc, id, onDelete}) {
     const handleDelete = () => {
-        onDelete(ID)
+        onDelete(id)
     }
     return (<section className="sale-single-container">
         <IoIosCloseCircleOutline size={'25px'} className='close' onClick={handleDelete}/>

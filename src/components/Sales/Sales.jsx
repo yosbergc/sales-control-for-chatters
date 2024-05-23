@@ -8,9 +8,9 @@ function Sales ({salesArray, handleDelete}) {
         Amount={sale.amount}
         Date={sale.date}
         Hour={sale.hour}
-        imgsrc={sale.imgsource}
+        imgsrc={sale.imgsource} 
         key={sale.id}
-        ID={sale.id}
+        id={sale.id}
         onDelete={handleDelete}
         />) : <NoSales/>}
         </>
