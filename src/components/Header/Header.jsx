@@ -9,6 +9,7 @@ import { userContext } from '../../context/userContext'
 import { useContext } from 'react'
 import { FaMoon } from "react-icons/fa"
 import { themeContext } from '../../context/themeContext'
+import { NavLink } from 'react-router-dom'
 import './header.css'
 function Header () {
     const { handleLogout } = useContext(userContext)
@@ -16,11 +17,12 @@ function Header () {
     return (
         <header>
           <Menu>
-            <a href='#xs'>Panel</a>
-            <a href='#xs'>Horario</a>
-            <a href='#xs'>Mensajes</a>
-            <a href='#xs'>Ganancias</a>
-            <a href='#xs'>Amonestaciones</a>
+            <NavLink to='/panel' className={({isActive}) => isActive && 'active-link'}>Panel</NavLink>
+            <NavLink to='/panel/horario' className={({isActive}) => isActive && 'active-link'}>Horario</NavLink>
+            <NavLink to='/panel/mensajes' className={({isActive}) => isActive && 'active-link'}>Mensajes</NavLink>
+            <NavLink to='/panel/ganancias' className={({isActive}) => isActive && 'active-link'}>Ganancias</NavLink>
+            <NavLink to='/panel/advertencias' className={({isActive}) => isActive && 'active-link'}>Amonestaciones</NavLink>
+            <NavLink to='/panel/ranking' className={({isActive}) => isActive && 'active-link'}>Ranking</NavLink>
           </Menu>
           <Dropdown visible={<UserInfo/>}>
             <DropdownItem><FaGear size={15}/>Cuenta</DropdownItem>

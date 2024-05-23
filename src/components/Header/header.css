@@ -18,3 +18,8 @@ header img {
     color: var(--acent-text);
     padding: 0px 5px;
 }
+.active-link {
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+}
