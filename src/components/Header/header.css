@@ -3,6 +3,7 @@ header {
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     border-bottom: 0.661157px solid  var(--border);
 }
 header img {

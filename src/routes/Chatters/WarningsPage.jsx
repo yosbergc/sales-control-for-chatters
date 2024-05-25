@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { Header } from "../components/Header/Header"
+import { Header } from "../../components/Header/Header"
 import { useNavigate } from "react-router-dom";
-import { userContext } from "../context/userContext"
-function SchedulePage() {
+import { userContext } from "../../context/userContext"
+function WarningsPage() {
     const { user, setUser } = React.useContext(userContext)
     const navigate = useNavigate()
     React.useEffect(() => {
@@ -17,7 +17,7 @@ function SchedulePage() {
     }, [user])
     return (
     <>
-        <Header />
+    <Header/>
     </>)
 }
-export { SchedulePage }
+export { WarningsPage }

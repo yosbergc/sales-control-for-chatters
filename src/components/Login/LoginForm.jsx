@@ -2,7 +2,7 @@ import './loginpage.css'
 import { userLogin } from '../../services/userLogin'
 import React from 'react'
 import { userContext } from '../../context/userContext'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { Loading } from '../Loading/Loading'
 function LoginForm () {
     const [isLoading, setIsloading] = React.useState(false)
@@ -45,10 +45,11 @@ function LoginForm () {
                 setPassword(e.target.value)
             }}/>
             <button>Iniciar sesión</button>
-            
+            <Link to="/registro">Registrarme</Link>
             {error && <p className='errorName'>{error}</p>}
         </form>
         {isLoading && <Loading />}
+
     </section>
     )
 }

@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React from "react";
-import { Header } from "../components/Header/Header"
+import { Header } from "../../components/Header/Header"
 import { useNavigate } from "react-router-dom";
-import { userContext } from "../context/userContext"
-function MessagePage() {
+import { userContext } from "../../context/userContext"
+function EarningPage() {
     const { user, setUser } = React.useContext(userContext)
     const navigate = useNavigate()
     React.useEffect(() => {
@@ -17,8 +17,7 @@ function MessagePage() {
     }, [user])
     return (
     <>
-    <Header />
-    </>
-    )
+        <Header />
+    </>)
 }
-export { MessagePage }
+export { EarningPage }

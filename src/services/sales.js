@@ -1,5 +1,5 @@
 function addSaleToDB(sale, token) {
-    return fetch('http://localhost:3000/api/sales', {
+    return fetch('https://madachatters.nexuspolygon.com/api/sales', {
         method: 'POST',
         headers: {
             "Authorization": `Bearer ${token}`
@@ -14,7 +14,7 @@ function deleteSalefromDB(saleId, token) {
     const object = {
         saleId: saleId
     }
-    return fetch('http://localhost:3000/api/sales', {
+    return fetch('https://madachatters.nexuspolygon.com/api/sales', {
         method: 'DELETE',
         headers: {
             "Authorization": `Bearer ${token}`,
