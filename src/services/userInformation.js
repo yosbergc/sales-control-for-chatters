@@ -1,6 +1,6 @@
 async function getUserInformation(token) {
     try {
-        const request = await fetch('https://madachatters.nexuspolygon.com/api/users/single', {
+        const request = await fetch('http://localhost:3001/api/users/single', {
         headers: {
             "Authorization": `Bearer ${token}`
         }

@@ -17,12 +17,12 @@ function Header () {
     return (
         <header>
           <Menu>
-            <NavLink to='/panel' className={({isActive}) => isActive && 'active-link'}>Panel</NavLink>
-            <NavLink to='/panel/horario' className={({isActive}) => isActive && 'active-link'}>Horario</NavLink>
-            <NavLink to='/panel/mensajes' className={({isActive}) => isActive && 'active-link'}>Mensajes</NavLink>
-            <NavLink to='/panel/ganancias' className={({isActive}) => isActive && 'active-link'}>Ganancias</NavLink>
-            <NavLink to='/panel/advertencias' className={({isActive}) => isActive && 'active-link'}>Amonestaciones</NavLink>
-            <NavLink to='/panel/ranking' className={({isActive}) => isActive && 'active-link'}>Ranking</NavLink>
+            <NavLink to='/panel' className={({isActive}) => isActive ? 'active-link' : ''}>Panel</NavLink>
+            <NavLink to='/panel/horario' className={({isActive}) => isActive ? 'active-link' : ''}>Horario</NavLink>
+            <NavLink to='/panel/mensajes' className={({isActive}) => isActive ? 'active-link' : ''}>Mensajes</NavLink>
+            <NavLink to='/panel/ganancias' className={({isActive}) => isActive ? 'active-link' : ''}>Ganancias</NavLink>
+            <NavLink to='/panel/advertencias' className={({isActive}) => isActive ? 'active-link' : ''}>Amonestaciones</NavLink>
+            <NavLink to='/panel/ranking' className={({isActive}) => isActive ? 'active-link' : ''}>Ranking</NavLink>
           </Menu>
           <Dropdown visible={<UserInfo/>}>
             <DropdownItem><FaGear size={15}/>Cuenta</DropdownItem>

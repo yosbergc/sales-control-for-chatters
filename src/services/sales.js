@@ -14,7 +14,7 @@ function deleteSalefromDB(saleId, token) {
     const object = {
         saleId: saleId
     }
-    return fetch('https://madachatters.nexuspolygon.com/api/sales', {
+    return fetch('http://localhost:3001/api/sales', {
         method: 'DELETE',
         headers: {
             "Authorization": `Bearer ${token}`,

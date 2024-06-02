@@ -20,10 +20,15 @@ function LoginForm () {
                         setError(false)
                     }, 5000)
                 } else {
-                    setIsloading(false)
                     setUser(response)
                     window.localStorage.setItem('userLogged', JSON.stringify(response))
-                    navigate('/panel')
+                    if (response.role === 'administrador'){
+                        navigate('/administracion')
+                    } else if (response.role === 'chatter') {
+                        navigate('/panel')
+                    }
+                    
+                    
                 }
             })
         })
