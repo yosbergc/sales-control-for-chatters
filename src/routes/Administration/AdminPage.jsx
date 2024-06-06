@@ -15,6 +15,9 @@ function AdminPage() {
     if (!user && !userStorage) {
       navigate('/')
     }
+    if (user.role !== "administrador") {
+      navigate('/')
+    }
   }, [user])
     return (
         <>
