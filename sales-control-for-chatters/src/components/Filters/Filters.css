@@ -1,0 +1,15 @@
+.filter-single {
+    color: var(--main-text);
+    padding: 5px 10px;
+    width: max-content;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    white-space: nowrap;
+    font-size: 0.875rem;
+}
+.filter-single.active {
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-radius: 0px 4px 5px black;
+}

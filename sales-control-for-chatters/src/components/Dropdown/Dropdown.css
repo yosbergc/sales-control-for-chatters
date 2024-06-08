@@ -1,0 +1,32 @@
+.dropdown {
+    position: relative;
+}
+.hiddenPart {
+    position: absolute;
+    right: 0px;
+    margin-top: 10px;
+    min-width: 100%;
+    z-index: 5;
+}
+.dropdown-list {
+    background-color: var(--main-component-color);
+    border: 0.661157px solid var(--border);
+    color: var(--main-text);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 14px;
+}
+.visiblePart {
+    display: flex;
+    align-items: center;
+    color: var(--main-text);
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.2s ease-in-out;
+}
+.visiblePart:hover {
+    background-color: var(--main-hover-component-color);
+    width: fit-content;
+}

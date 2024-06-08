@@ -1,0 +1,26 @@
+header {
+    background-color: var(--main-component-color);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 0.661157px solid  var(--border);
+}
+header img {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+}
+.user-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--acent-text);
+    padding: 0px 5px;
+}
+.active-link {
+    font-weight: 600 !important;
+    text-decoration: underline !important;
+    text-underline-offset: 5px;
+}

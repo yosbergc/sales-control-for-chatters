@@ -1,0 +1,72 @@
+.SaleList {
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+    background-color: var(--main-component-color);
+    border: 0.661157px solid  var(--border);
+    margin: 20px auto;
+}
+.salessinglecontainer {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+.SaleList > * {
+    margin-bottom: 10px;
+}
+.SaleListFilters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+    background-color: var(--main-hover-component-color);
+    border-radius: 5px;
+    padding: 10px;
+}
+.estadisticas {
+    width: 100%;
+    height: fit-content;
+    background-color: var(--main-component-color);
+    padding: 20px;
+    border: 0.661157px solid  var(--border);
+}
+.modalInner {
+    position: relative;
+    background-color: var(--main-hover-component-color);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+.closeButton {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+.closeButton {
+    cursor: pointer;
+}
+main {
+    margin: 10px;
+}
+@media (min-width: 1200px) {
+    .SaleList {
+        max-height: 92vh;
+        overflow-y: scroll;
+        margin: 0px;
+    }
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin: 0px;
+        margin-top: 10px;
+        align-items: stretch;
+        gap: 20px;
+    }
+    .estadisticas {
+        max-width: 100%;
+        min-height: 50vh;
+        margin-bottom: 10px;
+    }
+}

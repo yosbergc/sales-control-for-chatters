@@ -1,0 +1,46 @@
+.showInfoSection {
+    padding: 20px;
+    background-color: var(--main-component-color);
+    color: var(--main-text);
+    border: 0.661157px solid  var(--border);
+}
+.showInfoSection h3 {
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+.showInfoSection h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--main-text) !important;
+}
+.upper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.down {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+.down button {
+    background-color: var(--accent-color);
+    padding: 10px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    color: white;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.875rem;
+}
+.gananciaEstimada h5, .totalGenerated h5 {
+    color: rgb(0, 0, 0);
+}
+@media (min-width: 1200px) {
+    .upper {
+        flex-wrap: nowrap;
+    }
+}

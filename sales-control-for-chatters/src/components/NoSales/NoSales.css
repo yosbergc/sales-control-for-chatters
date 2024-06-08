@@ -1,0 +1,11 @@
+.NoSales {
+    display: grid;
+    place-content: center;
+    text-align: center;
+    color: var(--main-text);
+    width: 100%;
+}
+.NoSales svg {
+    justify-self: center;
+    margin: 20px 0px;
+}

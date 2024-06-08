@@ -1,0 +1,11 @@
+.openmodal {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.3s ease-in;
+    color: var(--main-text);
+}
+.openmodal:hover {
+    transform: scale(1.2);
+}
