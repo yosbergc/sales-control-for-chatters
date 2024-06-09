@@ -3,6 +3,7 @@ import React from "react"
 import { AdminHeader } from "../../components/AdminHeader/AdminHeader"
 import { useNavigate } from "react-router-dom"
 import { userContext } from "../../context/userContext"
+import { getUsers } from "../../services/getUsers"
 function AdminPage() {
     const { user, setUser } = React.useContext(userContext)
   const navigate = useNavigate()
@@ -15,9 +16,18 @@ function AdminPage() {
     if (!user && !userStorage) {
       navigate('/')
     }
-    if (user.role !== "administrador") {
-      navigate('/')
+    if (user) {
+      if (user.role !== "administrador") {
+        navigate('/')
+      }
     }
+  }, [user])
+  React.useEffect(() => {
+    if (user) {
+      getUsers(user.token)
+      .then(res => console.log(res))
+    }
+    
   }, [user])
     return (
         <>

@@ -17,32 +17,32 @@ function AdminHeader() {
         <header>
             <Menu>
                 <NavLink to='/administracion' className={({isActive}) => isActive && 'active-link'}>Panel</NavLink>
-                <Dropdown visible={<NavLink to='/administracion/chatters' className={({isActive}) => isActive && 'active-link'}>Chatters</NavLink>}>
+                <Dropdown visible={<NavLink to='/administracion/chatters' className={({isActive}) => isActive ? 'active-link' : ''}>Chatters</NavLink>}>
                     <DropdownItem>
-                        <NavLink to='/administracion/chatters/gestionar' className={({isActive}) => isActive && 'active-link'}>Gestionar</NavLink>
+                        <NavLink to='/administracion/chatters/gestionar' className={({isActive}) => isActive ? 'active-link' : ''}>Gestionar</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                        <NavLink to='/administracion/chatters/horarios' className={({isActive}) => isActive && 'active-link'}>Horarios</NavLink>
+                        <NavLink to='/administracion/chatters/horarios' className={({isActive}) => isActive ? 'active-link' : ''}>Horarios</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                        <NavLink to='/administracion/chatters/advertencias' className={({isActive}) => isActive && 'active-link'}>Amonestar</NavLink>
+                        <NavLink to='/administracion/chatters/advertencias' className={({isActive}) => isActive ? 'active-link' : ''}>Amonestar</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                        <NavLink to='/administracion/chatters/pagos' className={({isActive}) => isActive && 'active-link'}>Pagar</NavLink>
-                    </DropdownItem>
-                </Dropdown>
-                <Dropdown visible={<NavLink to='/administracion/modelos' className={({isActive}) => isActive && 'active-link'}>Modelos</NavLink>}>
-                    <DropdownItem>
-                        <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive && 'active-link'}>Gestionar</NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
-                        <NavLink to='/administracion/modelos/asignar' className={({isActive}) => isActive && 'active-link'}>Asignar</NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
-                        <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive && 'active-link'}>Rendimiento</NavLink>
+                        <NavLink to='/administracion/chatters/pagos' className={({isActive}) => isActive ? 'active-link' : ''}>Pagar</NavLink>
                     </DropdownItem>
                 </Dropdown>
-                <NavLink to='/administracion/ranking' className={({isActive}) => isActive && 'active-link'}>Ranking</NavLink>
+                <Dropdown visible={<NavLink to='/administracion/modelos' className={({isActive}) => isActive ? 'active-link' : ''}>Modelos</NavLink>}>
+                    <DropdownItem>
+                        <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive ? 'active-link' : ''}>Gestionar</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <NavLink to='/administracion/modelos/asignar' className={({isActive}) => isActive ? 'active-link' : ''}>Asignar</NavLink>
+                    </DropdownItem>
+                    <DropdownItem>
+                        <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive ? 'active-link' : ''}>Rendimiento</NavLink>
+                    </DropdownItem>
+                </Dropdown>
+                <NavLink to='/administracion/ranking' className={({isActive}) => isActive ? 'active-link' : ''}>Ranking</NavLink>
             </Menu>
             <Dropdown visible={<UserInfo/>}>
                 <DropdownItem><FaGear size={15}/>Cuenta</DropdownItem>
