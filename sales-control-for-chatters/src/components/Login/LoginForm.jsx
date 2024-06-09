@@ -12,27 +12,24 @@ function LoginForm () {
         setIsloading(true)
         userLogin(email, password)
         .then(res => {
-            res.json().then(response => {
-                setIsloading(false)
-                if (response.error) {
-                    setError(response.error)
-                    setTimeout(() => {
-                        setError(false)
-                    }, 5000)
-                } else {
-                    setUser(response)
-                    window.localStorage.setItem('userLogged', JSON.stringify(response))
-                    if (response.role === 'administrador'){
-                        navigate('/administracion')
-                    } else if (response.role === 'chatter') {
-                        navigate('/panel')
-                    }
-                    
-                    
-                }
-            })
+            setIsloading(false)
+            setUser(res)
+            window.localStorage.setItem('userLogged', JSON.stringify(res))
+            if (res.role === 'administrador'){
+                navigate('/administracion')
+            } else if (res.role === 'chatter') {
+                navigate('/panel')
+            }
+        })
+        .catch(error => {
+            setIsloading(false)
+            setError(error.response.data.error)
+            setTimeout(() => {
+                setError(false)
+            }, 5000)
         })
     }
+
     const { setUser } = React.useContext(userContext)
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
