@@ -1,0 +1,18 @@
+.usersingleInformation {
+    width: 100%;
+    color: var(--main-text);
+    border-bottom: 1px solid #e5e7eb;
+}
+.role {
+    background-color: rgba(76, 76, 255, 0.197);
+    width: fit-content;
+    padding: 5px;
+    border-radius: 5px;
+    color: var(--main-text);
+    text-transform: capitalize;
+}
+.actions {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}

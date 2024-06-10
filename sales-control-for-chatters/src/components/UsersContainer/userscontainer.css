@@ -1,0 +1,39 @@
+main {
+    margin: 20px;
+}
+h2 {
+    color: var(--main-text);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.usersContainer {
+    background-color: var(--main-component-color);
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--border);
+}
+table {
+    width: 100%;
+    border-radius: 10px;
+    font-size: 14px;
+}
+table td {
+    padding: 10px;
+}
+table {
+    border-spacing: 0px;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    overflow: hidden;
+}
+table thead td{
+    background-color: var(--main-text);
+    color: var(--main-body-color);
+    border: none;
+    padding: 10px;
+}
+table th {
+    text-align: left;
+    font-weight: 500;
+    font-size: 14px;
+}
