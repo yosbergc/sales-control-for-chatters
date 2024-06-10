@@ -3,7 +3,7 @@ import './userscontainer.css'
 function UsersContainer({users}) {
     return (
         <section className="usersContainer">
-            <h2>Ranking de usuarios</h2>
+            <h2>Usuarios</h2>
             <table>
                 <thead>
                     <tr>
