@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom"
 import { userContext } from "../../context/userContext"
 import { getUsers } from "../../services/getUsers"
 import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
+import { InfoCard } from "../../components/InfoCard/InfoCard"
+import './adminpage.css'
 function AdminPage() {
     const { user, setUser } = React.useContext(userContext)
     const [chatters, setChatters] = React.useState([])
@@ -34,6 +36,13 @@ function AdminPage() {
     return (
         <>
         <AdminHeader/>
+        <section className="cards">
+          <InfoCard title={"Ultima hora"} data={"200.00$"}/>
+          <InfoCard title={"Hoy"} data={"4875.13$"}/>
+          <InfoCard title={"7 días"} data={"32158.99$"}/>
+          <InfoCard title={"15 días"} data={"64859.11$"}/>
+          <InfoCard title={"30 días"} data={"150857.11$"}/>
+        </section>
         <main>
           <UsersContainer users={chatters}/>
         </main>

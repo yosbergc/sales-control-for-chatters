@@ -1,0 +1,17 @@
+.infocard h2 {
+    color: var(--acent-text);
+    font-size: 14px;
+    font-weight: 500;
+}
+.infocard p {
+    font-size: 28px;
+    font-weight: 600;
+}
+.infocard {
+    padding: 20px;
+    background-color: var(--main-component-color);
+    border-radius: 4px;
+    color: var(--main-text);
+    border-top: 10px solid blue;
+    border-top-style: outset;
+}

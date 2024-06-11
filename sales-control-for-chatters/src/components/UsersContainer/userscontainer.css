@@ -3,14 +3,12 @@ main {
 }
 h2 {
     color: var(--main-text);
-    margin-bottom: 10px;
     font-size: 20px;
 }
 .usersContainer {
     background-color: var(--main-component-color);
     width: 100%;
     padding: 20px;
-    border: 1px solid var(--border);
 }
 table {
     width: 100%;
@@ -36,4 +34,18 @@ table th {
     text-align: left;
     font-weight: 500;
     font-size: 14px;
+}
+.headerusers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+.headerusers .button {
+    text-decoration: none;
+    color: var(--main-text);
+}
+.headerusers .button:hover {
+    text-decoration: underline;
+    text-underline-offset: 5px;
 }

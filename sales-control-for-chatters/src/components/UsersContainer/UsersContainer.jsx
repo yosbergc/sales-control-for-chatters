@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom"
 import { UserSingle } from "../UserSingle/UserSingle"
+Link
 import './userscontainer.css'
 function UsersContainer({users}) {
     return (
         <section className="usersContainer">
-            <h2>Usuarios</h2>
+            <section className="headerusers">
+                <h2>Chatters</h2>
+                <Link className="button" to={'/administracion/chatters/gestionar'}>Gestionar</Link>
+            </section>
             <table>
                 <thead>
                     <tr>
                         <td>Nombre</td>
                         <td>Role</td>
-                        <td>Cantidad</td>
+                        <td>Estado</td>
                         <td>Acciones</td>
                     </tr>
                 </thead>
@@ -22,8 +27,7 @@ function UsersContainer({users}) {
                     role={user.role}
                     username={user.username}
                     name={user.name}
-                    total={100}
-                    models={"Xxd"}
+                    estado={user.active}
                     key={user.id}
                 />
                 }

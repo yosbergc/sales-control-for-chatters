@@ -16,3 +16,15 @@
     gap: 10px;
     align-items: center;
 }
+.activo {
+    background-color: green;
+    padding: 5px;
+    width: fit-content;
+    border-radius: 8px;
+}
+.inactivo {
+    background-color: rgba(255, 132, 132, 0.299);
+    padding: 5px;
+    width: fit-content;
+    border-radius: 4px;
+}
