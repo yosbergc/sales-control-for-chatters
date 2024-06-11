@@ -1,0 +1,13 @@
+.chart {
+    padding: 20px;
+    background-color: var(--main-component-color);
+}
+.chart h2 {
+    margin-bottom: 20px;
+}
+.chartComponent {
+    border: 1px solid var(--border);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: white;
+}

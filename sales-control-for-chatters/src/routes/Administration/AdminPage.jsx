@@ -6,12 +6,13 @@ import { userContext } from "../../context/userContext"
 import { getUsers } from "../../services/getUsers"
 import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
 import { InfoCard } from "../../components/InfoCard/InfoCard"
+import { ManyChartComponent } from "../../components/UsersChartComponent/ManyChartComponent"
 import './adminpage.css'
 function AdminPage() {
-    const { user, setUser } = React.useContext(userContext)
-    const [chatters, setChatters] = React.useState([])
+  const { user, setUser } = React.useContext(userContext)
+  const [chatters, setChatters] = React.useState([])
   const navigate = useNavigate()
-  
+  const onlyChatters = chatters.filter(user => user.role === "chatter")
   React.useEffect(() => {
     const userStorage = JSON.parse(localStorage.getItem('userLogged'));
     if (userStorage && !user) {
@@ -45,6 +46,7 @@ function AdminPage() {
         </section>
         <main>
           <UsersContainer users={chatters}/>
+          <ManyChartComponent users={onlyChatters}/>
         </main>
         </>
     )

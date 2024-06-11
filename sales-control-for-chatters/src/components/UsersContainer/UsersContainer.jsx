@@ -20,7 +20,6 @@ function UsersContainer({users}) {
                 </thead>
                 <tbody>
             {users.map(user => {
-                console.log(user)
                 if (user.role === 'chatter') {
                     return <UserSingle 
                     id={user.id}

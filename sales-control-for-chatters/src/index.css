@@ -28,6 +28,9 @@ body.dark {
 body {
   background-color: var(--main-body-color);
 }
+a {
+  color: var(--main-text);
+}
 ::-webkit-scrollbar {
   appearance: none; 
   width: 10px;

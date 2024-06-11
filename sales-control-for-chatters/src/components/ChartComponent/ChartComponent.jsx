@@ -18,7 +18,7 @@ function ChartComponent ({sales, filters}) {
             borderColor: 'BLUE',
             backgroundColor: 'rgba(16, 25, 211, 0.20)',
             fill: true,
-            },
+            }
         ]
     };
     
