@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { UserSingle } from "../UserSingle/UserSingle"
-Link
 import './userscontainer.css'
+
 function UsersContainer({users}) {
     return (
         <section className="usersContainer">

@@ -1,14 +1,13 @@
-import './UserSingle.css'
 import { CiUser } from "react-icons/ci"
 import { CiWarning } from "react-icons/ci";
 import { CiMoneyBill } from "react-icons/ci"
 import { LiaUserFriendsSolid } from "react-icons/lia"
 import { Tooltip } from "../../components/Tooltip/Tooltip"
-function UserSingle({name, estado, role}) {
+
+function ModelSingle({ name, team}) {
     return (<tr className="usersingleInformation">
         <td>{name}</td>
-        <td><p className='role'>{role}</p></td>
-        <td>{estado ? <p className='activo'>Activo</p> : <p className='inactivo'>Inactivo</p>}</td>
+        <td><p className='role'>{team}</p></td>
         <td className='actions'>
             <Tooltip text={"Perfil"}>
                 <CiUser size={20}/>
@@ -26,4 +25,4 @@ function UserSingle({name, estado, role}) {
         </td>
     </tr>)
 }
-export { UserSingle }
+export { ModelSingle }

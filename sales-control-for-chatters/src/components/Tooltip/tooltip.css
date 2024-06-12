@@ -1,0 +1,10 @@
+.tooltipContainer {
+    position: relative;
+}
+.tooltipModal {
+    position: absolute;
+    background-color: var(--main-text);
+    color: var(--main-component-color);
+    padding: 5px;
+    z-index: 10;
+}

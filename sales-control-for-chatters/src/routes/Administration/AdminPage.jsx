@@ -7,6 +7,7 @@ import { getUsers } from "../../services/getUsers"
 import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
 import { InfoCard } from "../../components/InfoCard/InfoCard"
 import { ManyChartComponent } from "../../components/UsersChartComponent/ManyChartComponent"
+import { ModelsContainer } from "../../components/ModelsContainer/ModelsContainer"
 import './adminpage.css'
 function AdminPage() {
   const { user, setUser } = React.useContext(userContext)
@@ -47,6 +48,7 @@ function AdminPage() {
         <main>
           <UsersContainer users={chatters}/>
           <ManyChartComponent users={onlyChatters}/>
+          <ModelsContainer users={onlyChatters}/>
         </main>
         </>
     )
