@@ -4,7 +4,7 @@ Chart.register(Colors);
 import './manychart.css'
 Chart.register(...registerables)
 
-function ManyChartComponent({users = []}) {
+function ManyChartComponent({users = [], title}) {
     const labels = users.sales?.map(singleSale => {
         if (filters.today === true) {
             return singleSale.hour;
@@ -36,7 +36,7 @@ function ManyChartComponent({users = []}) {
     };
 
     return <section className='chart'>
-        <h2>Rendimiento de chatters</h2>
+        <h2>Rendimiento de {title}</h2>
         <Line data={data} options={options} className='chartComponent'/>
     </section>
 }

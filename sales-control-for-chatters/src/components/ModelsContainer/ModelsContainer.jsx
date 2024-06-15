@@ -5,7 +5,7 @@ function ModelsContainer({ users }) {
     return (<section className="usersContainer">
         <section className="headerusers">
             <h2>Modelos</h2>
-            <Link className="button" to={'/administracion/chatters/gestionar'}>Gestionar</Link>
+            <Link className="button" to={'/administracion/modelos/gestionar'}>Gestionar</Link>
         </section>
         <table>
             <thead>
@@ -20,6 +20,7 @@ function ModelsContainer({ users }) {
             if (user.role === 'chatter') {
                 return <ModelSingle 
                 name={user.name}
+                key={user.id}
             />
             }
         })}

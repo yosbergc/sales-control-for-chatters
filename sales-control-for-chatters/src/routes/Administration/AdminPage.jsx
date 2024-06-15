@@ -8,6 +8,7 @@ import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
 import { InfoCard } from "../../components/InfoCard/InfoCard"
 import { ManyChartComponent } from "../../components/UsersChartComponent/ManyChartComponent"
 import { ModelsContainer } from "../../components/ModelsContainer/ModelsContainer"
+import { getModels } from '../../services/getModels'
 import './adminpage.css'
 function AdminPage() {
   const { user, setUser } = React.useContext(userContext)
@@ -32,6 +33,14 @@ function AdminPage() {
     if (user) {
       getUsers(user.token)
       .then(res => setChatters(res))
+      .finally(() => {
+        getModels(user.token)
+        .then(data => console.log(data))
+        .catch(error => console.log(error))
+      })
+      .catch(error => console.log(error))
+      .catch(error => console.log(error))
+
     }
     
   }, [user])
@@ -47,7 +56,8 @@ function AdminPage() {
         </section>
         <main>
           <UsersContainer users={chatters}/>
-          <ManyChartComponent users={onlyChatters}/>
+          <ManyChartComponent users={onlyChatters} title={"chatters"}/>
+          <ManyChartComponent users={onlyChatters} title={"modelos"}/>
           <ModelsContainer users={onlyChatters}/>
         </main>
         </>

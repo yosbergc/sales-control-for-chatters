@@ -7,7 +7,7 @@ import { Tooltip } from "../../components/Tooltip/Tooltip"
 function ModelSingle({ name, team}) {
     return (<tr className="usersingleInformation">
         <td>{name}</td>
-        <td><p className='role'>{team}</p></td>
+        <td>{team}</td>
         <td className='actions'>
             <Tooltip text={"Perfil"}>
                 <CiUser size={20}/>
