@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import { ModelSingle } from "../ModelSingle/ModelSingle"
 
-function ModelsContainer({ users }) {
+function ModelsContainer({ models }) {
     return (<section className="usersContainer">
         <section className="headerusers">
             <h2>Modelos</h2>
@@ -16,13 +16,11 @@ function ModelsContainer({ users }) {
                 </tr>
             </thead>
             <tbody>
-        {users.map(user => {
-            if (user.role === 'chatter') {
+        {models.map(model => {
                 return <ModelSingle 
-                name={user.name}
-                key={user.id}
+                name={model.name}
+                key={model._id}
             />
-            }
         })}
         </tbody>
         </table>

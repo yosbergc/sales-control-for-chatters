@@ -22,7 +22,6 @@ table {
     border-spacing: 0px;
     border: 1px solid var(--border);
     border-radius: 5px;
-    overflow: hidden;
 }
 table thead td{
     background-color: var(--main-text);

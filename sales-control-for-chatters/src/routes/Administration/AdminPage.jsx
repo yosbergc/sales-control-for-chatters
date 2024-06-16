@@ -6,12 +6,13 @@ import { userContext } from "../../context/userContext"
 import { getUsers } from "../../services/getUsers"
 import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
 import { InfoCard } from "../../components/InfoCard/InfoCard"
-import { ManyChartComponent } from "../../components/UsersChartComponent/ManyChartComponent"
+import { ManyChartComponent } from "../../components/ManyChartComponent/ManyChartComponent"
 import { ModelsContainer } from "../../components/ModelsContainer/ModelsContainer"
 import { getModels } from '../../services/getModels'
 import './adminpage.css'
 function AdminPage() {
   const { user, setUser } = React.useContext(userContext)
+  const [models, setModels] = React.useState([])
   const [chatters, setChatters] = React.useState([])
   const navigate = useNavigate()
   const onlyChatters = chatters.filter(user => user.role === "chatter")
@@ -35,12 +36,14 @@ function AdminPage() {
       .then(res => setChatters(res))
       .finally(() => {
         getModels(user.token)
-        .then(data => console.log(data))
+        .then(data => {
+          setModels(data)
+          console.log(data)
+        })
         .catch(error => console.log(error))
       })
       .catch(error => console.log(error))
       .catch(error => console.log(error))
-
     }
     
   }, [user])
@@ -57,8 +60,8 @@ function AdminPage() {
         <main>
           <UsersContainer users={chatters}/>
           <ManyChartComponent users={onlyChatters} title={"chatters"}/>
-          <ManyChartComponent users={onlyChatters} title={"modelos"}/>
-          <ModelsContainer users={onlyChatters}/>
+          <ManyChartComponent users={models} title={"modelos"}/>
+          <ModelsContainer models={models}/>
         </main>
         </>
     )
