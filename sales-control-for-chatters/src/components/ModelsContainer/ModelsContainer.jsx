@@ -19,6 +19,7 @@ function ModelsContainer({ models }) {
         {models.map(model => {
                 return <ModelSingle 
                 name={model.name}
+                team={model.team}
                 key={model._id}
             />
         })}

@@ -1,0 +1,11 @@
+.teamMate {
+    width: 25px;
+    height: 25px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    place-content: center;
+    cursor: pointer;
+}
