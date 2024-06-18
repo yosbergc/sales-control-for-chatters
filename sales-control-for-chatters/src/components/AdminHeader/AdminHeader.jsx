@@ -36,9 +36,6 @@ function AdminHeader() {
                         <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive ? 'active-link' : ''}>Gestionar</NavLink>
                     </DropdownItem>
                     <DropdownItem>
-                        <NavLink to='/administracion/modelos/asignar' className={({isActive}) => isActive ? 'active-link' : ''}>Asignar</NavLink>
-                    </DropdownItem>
-                    <DropdownItem>
                         <NavLink to='/administracion/modelos/gestionar' className={({isActive}) => isActive ? 'active-link' : ''}>Rendimiento</NavLink>
                     </DropdownItem>
                 </Dropdown>

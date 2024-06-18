@@ -1,0 +1,4 @@
+function RankingPage() {
+
+}
+export { RankingPage }
