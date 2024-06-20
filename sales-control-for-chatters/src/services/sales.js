@@ -1,3 +1,5 @@
+import axios from 'axios'
+const baseUrl = 'https://madachatters.nexuspolygon.com/api/sales'
 function addSaleToDB(sale, token) {
     return fetch('https://madachatters.nexuspolygon.com/api/sales', {
         method: 'POST',
@@ -25,4 +27,13 @@ function deleteSalefromDB(saleId, token) {
     .then(res => res)
     .catch(error => error)
 }
-export { addSaleToDB, deleteSalefromDB }
+
+async function getSales(token) {
+    const { data } = await axios.get(baseUrl, {
+        headers: {
+            "Authorization": `Bearer ${token}`
+        }
+    })
+    return data;
+}
+export { addSaleToDB, deleteSalefromDB, getSales }

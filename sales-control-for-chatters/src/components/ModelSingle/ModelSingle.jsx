@@ -5,7 +5,7 @@ import { Team } from "../Team/Team"
 function ModelSingle({name, team}) {
     return (<tr className="usersingleInformation">
         <td>{name}</td>
-        <td>{team.map(teammate => <Team nombre={teammate.name}/>)}</td>
+        <td>{team.map(teammate => <Team nombre={teammate.name} key={teammate.name}/>)}</td>
         <td className='actions'>
             <Tooltip text={"Perfil"}>
                 <CiUser size={20}/>
