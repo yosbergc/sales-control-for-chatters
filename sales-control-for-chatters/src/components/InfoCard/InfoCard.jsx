@@ -3,7 +3,7 @@ function InfoCard({title, data}) {
     return (
         <section className="infocard">
             <h2>{title}</h2>
-            <p>{data}</p>
+            <p>{data}$</p>
         </section>
     )
 }

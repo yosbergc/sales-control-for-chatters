@@ -4,18 +4,22 @@ import { AdminHeader } from "../../components/AdminHeader/AdminHeader"
 import { useNavigate } from "react-router-dom"
 import { userContext } from "../../context/userContext"
 import { getUsers } from "../../services/Users"
+import { getModels } from '../../services/getModels'
+import { getSales } from '../../services/sales'
 import { UsersContainer } from "../../components/UsersContainer/UsersContainer"
 import { InfoCard } from "../../components/InfoCard/InfoCard"
 import { ManyChartComponent } from "../../components/ManyChartComponent/ManyChartComponent"
 import { ModelsContainer } from "../../components/ModelsContainer/ModelsContainer"
-import { getModels } from '../../services/getModels'
+import { filterCards } from "../../utils/filterCards"
 import './adminpage.css'
 function AdminPage() {
   const { user, setUser } = React.useContext(userContext)
   const [models, setModels] = React.useState([])
   const [chatters, setChatters] = React.useState([])
-  const navigate = useNavigate()
+  const [ sales, setSales ] = React.useState([])
+  const { salesLastHours, salesToday, sales7Days, sales15Days, sales30Days } = filterCards(sales)
   const onlyChatters = chatters.filter(user => user.role === "chatter")
+  const navigate = useNavigate()
   React.useEffect(() => {
     const userStorage = JSON.parse(localStorage.getItem('userLogged'));
     if (userStorage && !user) {
@@ -31,31 +35,26 @@ function AdminPage() {
     }
   }, [user])
   React.useEffect(() => {
-    if (user) {
-      getUsers(user.token)
-      .then(res => setChatters(res))
-      .finally(() => {
-        getModels(user.token)
-        .then(data => {
-          setModels(data)
-          console.log(data)
-        })
-        .catch(error => console.log(error))
-      })
-      .catch(error => console.log(error))
-      .catch(error => console.log(error))
-    }
-    
+    (async () => {
+      if (user) {
+        const users = await getUsers(user.token)
+        setChatters(users)
+        const models = await getModels(user.token)
+        setModels(models)
+        const sales = await getSales(user.token)
+        setSales(sales)
+      }
+    })()
   }, [user])
     return (
         <>
         <AdminHeader/>
         <section className="cards">
-          <InfoCard title={"Ultima hora"} data={"200.00$"}/>
-          <InfoCard title={"Hoy"} data={"4875.13$"}/>
-          <InfoCard title={"7 días"} data={"32158.99$"}/>
-          <InfoCard title={"15 días"} data={"64859.11$"}/>
-          <InfoCard title={"30 días"} data={"150857.11$"}/>
+          <InfoCard title={"Ultima hora"} data={salesLastHours}/>
+          <InfoCard title={"Hoy"} data={salesToday}/>
+          <InfoCard title={"7 días"} data={sales7Days}/>
+          <InfoCard title={"15 días"} data={sales15Days}/>
+          <InfoCard title={"30 días"} data={sales30Days}/>
         </section>
         <main>
           <UsersContainer users={chatters}/>
