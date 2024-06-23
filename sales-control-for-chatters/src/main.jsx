@@ -9,6 +9,7 @@ import { AccountPage } from './routes/AccountPage'
 import { ProfilePage } from './routes/ProfilePage'
 import { WarningsPage } from './routes/Chatters/WarningsPage'
 import { AdminPage } from './routes/Administration/AdminPage';
+import { ChattersPage } from './routes/Administration/ChattersPage'
 import { NotFound } from './routes/NotFound';
 import { RegisterPage } from './routes/RegisterPage';
 import { ProvideUserContext } from './context/userContext'
@@ -31,6 +32,7 @@ root.render(
                     <Route path='/perfil' element={<ProfilePage/>}/>
                     <Route path='/registro' element={<RegisterPage/>}/>
                     <Route path='/administracion' element={<AdminPage/>}/>
+                    <Route path='/administracion/chatters' element={<ChattersPage/>}/>
                     <Route path='*' element={<NotFound/>}/>
                 </Routes>
             </Router>

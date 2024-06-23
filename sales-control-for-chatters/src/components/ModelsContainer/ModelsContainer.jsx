@@ -5,14 +5,13 @@ function ModelsContainer({ models }) {
     return (<section className="usersContainer">
         <section className="headerusers">
             <h2>Modelos</h2>
-            <Link className="button" to={'/administracion/modelos/gestionar'}>Gestionar</Link>
+            <Link className="button" to={'/administracion/modelos'}>Gestionar</Link>
         </section>
         <table>
             <thead>
                 <tr>
                     <td>Nombre</td>
                     <td>Equipo</td>
-                    <td>Acciones</td>
                 </tr>
             </thead>
             <tbody>

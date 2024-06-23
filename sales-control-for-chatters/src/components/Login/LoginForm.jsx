@@ -5,6 +5,23 @@ import { userContext } from '../../context/userContext'
 import { useNavigate, Link } from 'react-router-dom'
 import { Loading } from '../Loading/Loading'
 function LoginForm () {
+    const { user, setUser } = React.useContext(userContext)
+    React.useEffect(() => {
+        const userStorage = JSON.parse(localStorage.getItem('userLogged'));
+        if (userStorage && !user) {
+          setUser(userStorage)
+        }
+        if (!user && !userStorage) {
+          navigate('/')
+        }
+        if (user) {
+          if (user.role !== "administrador") {
+            navigate('/panel')
+          } else {
+            navigate('/administracion')
+          }
+        }
+      }, [user])
     const [isLoading, setIsloading] = React.useState(false)
     const navigate = useNavigate()
     const handleSubmit = (event) => {
@@ -30,7 +47,7 @@ function LoginForm () {
         })
     }
 
-    const { setUser } = React.useContext(userContext)
+    
     const [email, setEmail] = React.useState('')
     const [password, setPassword] = React.useState('')
     const [error, setError] = React.useState(false)
