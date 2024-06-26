@@ -12,13 +12,15 @@ function ModelsContainer({ models }) {
                 <tr>
                     <td>Nombre</td>
                     <td>Equipo</td>
+                    <td>Meta turno</td>
                 </tr>
             </thead>
             <tbody>
         {models.map(model => {
-                return <ModelSingle 
+                return <ModelSingle   
                 name={model.name}
                 team={model.team}
+                minimo={model.turnGoal}
                 key={model._id}
             />
         })}

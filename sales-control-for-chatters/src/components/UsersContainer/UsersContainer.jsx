@@ -21,7 +21,6 @@ function UsersContainer({users}) {
                 <tbody>
             {users.map(user => {
                 if (user.role === 'chatter') {
-                    console.log(user)
                     return <UserSingle 
                     id={user.id}
                     role={user.role}
